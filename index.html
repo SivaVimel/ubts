@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBTS | Tally Gold Partner Oman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --tally-blue: #00529B;
+            --tally-green: #00529B;
+            --ubts-gold: #F9B233;
+        }
+        .bg-tally-blue { background-color: var(--tally-blue); }
+        .text-tally-blue { color: var(--tally-blue); }
+        .bg-tally-green { background-color: var(--tally-green); }
+        .border-tally-green { border-color: var(--tally-green); }
+        .bg-ubts-gold { background-color: var(--ubts-gold); }
+        
+        body { font-family: 'Inter', sans-serif; }
+        .nav-link:hover { color: var(--tally-blue); border-bottom: 2px solid var(--tally-blue); }
+        @keyframes slideUp {
+          from { transform: translateY(100%); }
+          to { transform: translateY(0); }
+        }
+        .animate-slideUp {
+          animation: slideUp 0.4s ease-out;
+        }
+        body.ubts-ai-open {
+          overflow: hidden;
+          height: 100vh;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div class="bg-tally-blue text-white py-2 px-6 md:px-16 text-xs hidden md:flex justify-between items-center">
+        <div class="flex gap-6">
+            <span><i class="fas fa-envelope mr-2"></i>biztoolsoman@hcshah.co</span>
+            <span><i class="fas fa-phone mr-2"></i>+968 24786651</span>
+            <span><i class="fas fa-map-marker-alt mr-2"></i>Ruwi, PC 112, Muscat, Oman</span>
+        </div>
+        <div class="flex gap-4">
+            <span class="font-bold">Authorized Tally Gold Partner</span>
+        </div>
+    </div>
+
+    <nav class="bg-white sticky top-0 z-50 shadow-md px-6 md:px-16 py-3 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="images/logo.png" alt="UBTS" class="h-10 md:h-12">
+        </div>
+
+        <ul class="hidden lg:flex gap-8 font-bold text-gray-700 uppercase text-sm">
+            <li>
+                <button onclick="openAboutModal()" class="nav-link transition-all pb-1 uppercase">
+                  About
+                </button>
+            </li>
+            <li>
+                <button onclick="openProductsModal()" class="nav-link transition-all pb-1 uppercase">
+                  Products
+                </button>
+            </li>              
+            <li>
+                <button onclick="openExpertModal()" class="nav-link transition-all pb-1 uppercase">
+                  Ask Expert
+                </button>
+            </li>              
+            <li>
+                <button onclick="openContactModal()" class="nav-link transition-all pb-1 uppercase">
+                  Contact
+                </button>
+            </li>              
+        </ul>
+
+        <div class="flex items-center gap-4">
+            <img src="images/tallyprime-badge.webp" class="h-10 md:h-12 border-l pl-4 hidden md:block">
+            <button id="ubts-ai-toggle" class="bg-tally-green text-white px-4 py-2 rounded text-xs font-black shadow-lg hover:scale-105 transition-transform">Ask UBTS AI</button>
+        </div>
+    </nav>
+
+    <section id="home" class="relative bg-ubts-gold overflow-hidden py-16 px-6 md:px-16 flex flex-col md:flex-row items-center min-h-[800px]">
+        <div class="md:w-3/5 z-10">
+            <h4 class="text-tally-blue font-black mb-2 tracking-widest uppercase">United Business Trading & Services LLC</h4>
+            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+                Empowering Oman's Businesses with <span class="text-white">Tally Prime</span>
+            </h1>
+            <p class="text-gray-800 mb-8 max-w-xl text-lg leading-relaxed">
+                Formerly <strong>Business Tools & Solutions LLC</strong>. Over 30 years of excellence as an exclusive distributor and Tally Gold Partner in the Sultanate of Oman.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#contact" class="bg-tally-blue text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:bg-blue-900 transition-all">Get a Free Consultation</a>
+                <a href="#products" class="bg-white text-tally-blue px-8 py-4 rounded-lg font-bold shadow-md hover:bg-gray-100 transition-all">Explore Products</a>
+            </div>
+        </div>
+        <div class="md:w-2/5 relative mt-12 md:mt-0">
+            <img src="screen-cta-1.png" alt="Tally Interface" class="w-full drop-shadow-2xl rounded-xl rotate-1">
+            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border-2 border-tally-green">
+                <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16">
+                <div>
+                    <p class="text-xs font-bold text-gray-500 uppercase">Certified</p>
+                    <p class="font-black text-tally-blue">20+ Years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-6 md:px-16 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
+            
+            <!-- Content -->
+            <div class="lg:w-1/2">
+                <div class="w-20 h-1 bg-tally-green mb-6"></div>
+                
+                <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-8">
+                    3 Decades of Specialized Tally Expertise in Oman
+                </h2>
+    
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    United Business Trading & Services LLC (UBTS), established in 1996, has been closely associated with Tally Solutions and its ecosystem for over 30 years. We cater to businesses across Trading, Manufacturing, Engineering, Construction, Finance, and Distribution, supporting over 10,000 users over time.
+                </p>
+    
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-tally-green text-xl"></i>
+                        <span id="capabilityText" class="font-bold text-gray-700 text-sm transition-all duration-500">
+                            VAT Compliance & Reporting
+                        </span>
+                    </div>
+                </div>                
+    
+                <p class="text-sm italic text-gray-400">
+                    Established in 1996 as an exclusive distributor of Tally Solutions.
+                </p>
+            </div>
+    
+            <!-- Visual -->
+            <div class="lg:w-1/2 relative">
+                <img src="images/certificate2.webp" alt="Business Transformation" class="w-full rounded-2xl">
+                <div class="absolute top-1/2 -translate-y-1/2 -right-8 bg-tally-blue text-white p-8 rounded-2xl shadow-2xl hidden md:block">
+                    <span class="text-6xl font-black block">30+</span>
+                    <span class="text-sm font-bold uppercase tracking-widest">Years of Trust</span>
+                </div>
+            </div>
+    
+        </div>
+    </section>    
+    <script>
+        const capabilities = [
+          "VAT Compliance & Statutory Reporting",
+          "E-Invoicing Configuration",
+          "Custom TDL Reports & Transactions",
+          "Multilingual Accounting Support",
+          "Multi-Branch & Group Company Accounting",
+          "MIS & Business Intelligence Reports",
+          "ERP Implementation & Consulting",
+          "HRMS, Payroll & Fixed Assets Management"
+        ];
+        
+        let index = 0;
+        const el = document.getElementById("capabilityText");
+        
+        setInterval(() => {
+          el.classList.add("opacity-0", "translate-y-2");
+          
+          setTimeout(() => {
+            index = (index + 1) % capabilities.length;
+            el.textContent = capabilities[index];
+            el.classList.remove("opacity-0", "translate-y-2");
+          }, 400);
+        
+        }, 3000);
+    </script>        
+    <!-- PROFESSIONAL SERVICES : EXPANDED -->
+    <section class="py-24 bg-slate-100 px-6 md:px-16">
+    <div class="max-w-7xl mx-auto">
+  
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <h4 class="text-tally-blue font-bold uppercase tracking-widest text-xs mb-3">What We Do</h4>
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Our Professional Services</h2>
+        <p class="text-gray-500 max-w-3xl mx-auto text-sm md:text-base">
+          End-to-end Tally Prime and business consulting services designed to support organizations across all stages of growth.
+        </p>
+      </div>
+  
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
+        <!-- Implementation -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-green hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">Tally Prime Implementation</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            End-to-end installation, configuration, and deployment of Tally Prime tailored to your operational and statutory requirements.
+          </p>
+        </div>
+  
+        <!-- Licensing -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-ubts-gold hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">Tally Prime Licensing</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Authorized sales of Tally Prime Silver & Gold International licenses with expert guidance on user sizing and scalability.
+          </p>
+        </div>
+  
+        <!-- Custom TDL -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-blue hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">Custom TDL Development</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Development of customized reports, MIS dashboards, vouchers, and workflows using Tally Definition Language (TDL).
+          </p>
+        </div>
+  
+        <!-- VAT & Compliance -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-green hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-file-invoice"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">VAT & E-Invoicing Compliance</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Configuration and support for Oman VAT, e-invoicing, statutory reporting, and audit-ready compliance in Tally Prime.
+          </p>
+        </div>
+  
+        <!-- Multi-Branch -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-ubts-gold hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-network-wired"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">Multi-Branch & Group Companies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Centralized accounting with branch-level controls, consolidation, and inter-company reporting for group businesses.
+          </p>
+        </div>
+  
+        <!-- AMC & Support -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-blue hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">AMC & Ongoing Support</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Annual Maintenance Contracts including upgrades, troubleshooting, performance tuning, and priority support.
+          </p>
+        </div>
+  
+        <!-- Tally Drive -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-green hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">Tally Drive & Remote Access</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Secure cloud-based access to Tally data with scalable storage for distributed and remote teams.
+          </p>
+        </div>
+  
+        <!-- MIS & Reports -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-ubts-gold hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">MIS & Management Reporting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Decision-focused MIS reports covering finance, inventory, costing, profitability, and operational performance.
+          </p>
+        </div>
+  
+        <!-- Consulting -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border-b-4 border-tally-blue hover:shadow-xl transition-all">
+          <div class="w-14 h-14 bg-tally-blue rounded-lg flex items-center justify-center text-white text-2xl mb-6">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3 class="font-black text-xl mb-4">ERP & IT Consulting</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">
+            Advisory services to align accounting systems, ERP processes, and IT infrastructure with business growth.
+          </p>
+        </div>
+  
+      </div>
+    </div>
+    </section>  
+
+    <section id="expert" class="py-16 bg-tally-blue text-white px-6 md:px-16">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
+            <div>
+                <h2 class="text-3xl font-black mb-4 italic">Ask a Tally Expert</h2>
+                <p class="text-blue-100 max-w-md">Have questions on day-to-day Tally operations, configuration, or reporting? Our experts are ready to assist.</p>
+            </div>
+            <a href="#contact" class="bg-ubts-gold text-tally-blue font-black px-10 py-4 rounded-full text-lg shadow-2xl hover:scale-105 transition-transform">
+                Contact Expert Now
+            </a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS : CORRECTED & CLIENT-SAFE -->
+    <!-- PRODUCTS : COMPLETE UBTS PORTFOLIO -->
+<section id="products" class="py-24 px-6 md:px-16 bg-white">
+    <div class="max-w-7xl mx-auto">
+  
+      <!-- Header -->
+      <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-black mb-2">Our Product Portfolio</h2>
+          <p class="text-gray-500 max-w-xl">
+            Enterprise-ready accounting, ERP, cloud, and business management solutions designed to scale with your organization.
+          </p>
+        </div>
+        <img src="prime.png" alt="Tally Prime" class="h-16 hidden md:block" />
+      </div>
+  
+      <!-- Products Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+  
+        <!-- Tally Prime -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-black text-2xl">Tally Prime ERP</h3>
+            <img src="images/TallyERP.webp" class="h-10" />
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            World-renowned accounting and business management solution best suited for small enterprises, SMEs, and growing organizations.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>• Financial Accounting & Compliance</li>
+            <li>• Inventory & Cost Management</li>
+            <li>• VAT & E-Invoicing Ready</li>
+            <li>• Multi-user & Multi-branch Support</li>
+          </ul>
+          <div class="flex gap-2">
+            <span class="text-xs bg-tally-blue text-white px-3 py-1 rounded-full">Silver</span>
+            <span class="text-xs bg-ubts-gold text-tally-blue px-3 py-1 rounded-full">Gold</span>
+          </div>
+        </div>
+  
+        <!-- BTS ERP -->
+        <div class="bg-white p-8 rounded-2xl border-2 border-ubts-gold shadow-lg hover:shadow-2xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-black text-2xl">BTS ERP</h3>
+            <img src="images/BtsERP.webp" class="h-10" />
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            UBTS proprietary ERP solution designed for small and medium businesses with deep localization for Omani business practices.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>• Client-Server Architecture</li>
+            <li>• Customizable Business Workflows</li>
+            <li>• Trading & Manufacturing Focus</li>
+            <li>• Scalable Modular Design</li>
+          </ul>
+          <span class="text-xs font-bold uppercase tracking-widest text-ubts-gold">Integrated ERP Solution</span>
+        </div>
+  
+        <!-- eZuite Cloud ERP -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-black text-2xl">eZuite Cloud ERP</h3>
+            <img src="images/zsuite.webp" class="h-10" />
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            Fully integrated cloud ERP solution from Enhanzer, Sri Lanka, enabling end-to-end business management from anywhere.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>• Sales, Inventory & Manufacturing</li>
+            <li>• Payroll & HR Management</li>
+            <li>• POS & Ticketing</li>
+            <li>• Cloud-Based & Secure</li>
+          </ul>
+          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">Cloud ERP</span>
+        </div>
+  
+        <!-- BTS HRMS -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-black text-2xl">BTS HRMS</h3>
+            <img src="images/HRMS.webp" class="h-10" />
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            Stand-alone Human Resource Management System designed to streamline employee lifecycle and payroll operations.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>• Payroll & Leave Management</li>
+            <li>• Employee Records & Attendance</li>
+            <li>• Statutory Compliance</li>
+            <li>• Integration with ERP Systems</li>
+          </ul>
+          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">HR Management</span>
+        </div>
+  
+        <!-- BTS Fixed Assets -->
+        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
+          <div class="flex items-center justify-between mb-6">
+            <h3 class="font-black text-2xl">BTS Fixed Assets</h3>
+            <img src="images/FixedAssets.webp" class="h-10" />
+          </div>
+          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+            Comprehensive fixed asset management solution supporting multiple depreciation methods and asset tracking.
+          </p>
+          <ul class="text-sm text-gray-600 space-y-2 mb-6">
+            <li>• Asset Register & Transfers</li>
+            <li>• Multiple Depreciation Methods</li>
+            <li>• Audit-Ready Asset Reporting</li>
+            <li>• Integration with Accounting Systems</li>
+          </ul>
+          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">Asset Management</span>
+        </div>
+  
+      </div>
+  
+    </div>
+  </section>
+  
+
+  <section id="contact" class="py-24 px-6 md:px-16 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+  
+      <!-- LEFT: CONTACT DETAILS -->
+      <div>
+        <h2 class="text-4xl font-black mb-6">Get In Touch</h2>
+  
+        <div class="space-y-6">
+          <div class="flex gap-4 items-start">
+            <i class="fas fa-building text-ubts-gold mt-1 text-xl"></i>
+            <div>
+              <p class="font-bold">UBTS LLC (formerly BTS)</p>
+              <p class="text-gray-400 text-sm">
+                P.O. Box: 2508, Ruwi, P.C. 112, Sultanate of Oman
+              </p>
+            </div>
+          </div>
+  
+          <div class="flex gap-4 items-start">
+            <i class="fas fa-phone-alt text-ubts-gold mt-1 text-xl"></i>
+            <div>
+              <p class="font-bold text-xl text-tally-green">
+                24786651 | 24707654
+              </p>
+              <p class="text-gray-400 text-xs">
+                Working Hours: 9 AM - 1 PM | 4 PM - 7 PM
+              </p>
+            </div>
+          </div>
+  
+          <div class="flex gap-4 items-start">
+            <i class="fas fa-envelope text-ubts-gold mt-1 text-xl"></i>
+            <p class="font-bold">biztoolsoman@hcshah.co</p>
+          </div>
+        </div>
+  
+        <!-- SMALL MAP (FILLS GAP NICELY) -->
+        <div class="mt-10 rounded-xl overflow-hidden border border-white/10 shadow-lg">
+          <iframe
+            class="w-full h-[220px]"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3656.2386952601837!2d58.53807967533119!3d23.595770978776173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDM1JzQ0LjgiTiA1OMKwMzInMjYuNCJF!5e0!3m2!1sen!2som!4v1768745419232!5m2!1sen!2som"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+  
+      <!-- RIGHT: FORM -->
+      <div class="bg-white p-8 rounded-2xl shadow-2xl">
+        <form id="mainContactForm" class="grid grid-cols-1 gap-4 text-gray-800">
+  
+          <input id="mainName" type="text" placeholder="Full Name" required
+            class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none">
+  
+          <input id="mainCompany" type="text" placeholder="Company Name"
+            class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none">
+  
+          <input id="mainEmail" type="email" placeholder="Email Address" required
+            class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none">
+  
+          <input id="mainPhone" type="text" placeholder="Phone Number" required
+            class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none">
+  
+          <textarea id="mainMessage" placeholder="Your Message" required
+            class="p-4 bg-gray-50 border rounded-lg h-32 focus:ring-2 focus:ring-tally-green outline-none"></textarea>
+  
+          <button type="submit"
+            class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest">
+            Send Inquiry
+          </button>
+  
+        </form>
+      </div>
+  
+    </div>
+    </section>
+    <script>
+        document.getElementById('mainContactForm').addEventListener('submit', function (e) {
+          e.preventDefault();
+      
+          const name = document.getElementById('mainName').value.trim();
+          const company = document.getElementById('mainCompany').value.trim();
+          const email = document.getElementById('mainEmail').value.trim();
+          const phone = document.getElementById('mainPhone').value.trim();
+          const message = document.getElementById('mainMessage').value.trim();
+      
+          if (!name || !email || !phone || !message) {
+            alert('Please fill in all required fields.');
+            return;
+          }
+      
+          const subject = `Website Contact – ${name}`;
+      
+          const body =
+      `Name: ${name}
+      Company: ${company}
+      Email: ${email}
+      Phone: ${phone}
+      
+      Message:
+      ${message}
+      
+      ---
+      Submitted via Website Contact Section
+      UBTS`;
+      
+          const mailtoLink =
+            `mailto:biztoolsoman@hcshah.co` +
+            `?subject=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`;
+      
+          window.location.href = mailtoLink;
+        });
+      </script>
+      
+  
+
+    <footer class="bg-black py-10 text-center border-t border-white/10">
+        <p class="text-gray-500 text-xs">&copy; 2026 United Business Trading & Services LLC. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ABOUT MODAL -->
+    <div id="aboutModal" class="fixed inset-0 z-[999] hidden">
+  
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeAboutModal()"></div>
+    
+  
+    <!-- Modal Content -->
+    <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
+  
+      <!-- Header -->
+      <div class="sticky top-0 bg-tally-blue border-b z-10 px-6 md:px-16 py-6 flex justify-between items-center">
+        <h2 class="text-2xl md:text-3xl font-black" style="color:white;">
+          About United Business Trading & Services LLC
+        </h2>
+        <button onclick="closeAboutModal()" class="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold hover:bg-red-500 hover:text-white transition-all" style="color: white;">
+            &times;
+        </button>
+        
+      </div>
+  
+      <!-- Body -->
+      <div class="w-full">
+
+        <!-- HERO / BREADCRUMB SECTION -->
+        <section 
+          class="w-full py-28 relative bg-center bg-cover"
+          style="background-image: url('/images/aboutus.webp');"
+        >
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-white/80"></div>
+
+          <!-- Content -->
+          <div class="relative max-w-7xl mx-auto px-6">
+            <span class="text-sm uppercase text-tally-blue font-semibold">
+              About Company
+            </span>
+            <h1 class="text-5xl font-black mt-4 text-gray-900">
+              The New Way to Success.
+            </h1>
+          </div>
+        </section>
+      
+        <!-- ABOUT COMPANY (TEXT LEFT / IMAGE RIGHT) -->
+        <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+          
+          <!-- TEXT -->
+          <div>
+            <p class="text-gray-700 leading-relaxed">
+              United Business Trading & Services L.L.C. (Business Tools & Solutions – BTS) is an IT
+              solutions provider in the Sultanate of Oman, established to deliver accounting software,
+              ERP solutions, customized applications, and IT consultancy services.
+            </p>
+      
+            <p class="text-gray-700 leading-relaxed mt-4">
+              UBTS serves organizations across trading, manufacturing, and services sectors with
+              internationally recognized products such as Tally Prime, BTS ERP, and eZuite Cloud ERP,
+              supported by strong local implementation and support infrastructure.
+            </p>
+          </div>
+      
+          <!-- IMAGE + EXPERIENCE BOX -->
+          <div class="relative">
+            <img src="images/office.webp" class="rounded-lg shadow-lg w-full" />
+            <div class="absolute bottom-6 left-6 bg-tally-blue text-white px-8 py-6 rounded-lg">
+                <div class="text-4xl font-black">30+</div>
+                <div class="text-sm uppercase tracking-wide">Years of Experience</div>
+            </div>              
+          </div>
+      
+        </section>
+      
+        <!-- STATS STRIP (YELLOW BAR) -->
+        <section id="statsSection" class="bg-yellow-400 py-16">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+          
+              <div>
+                <div class="text-4xl font-black">
+                  <span class="counter" data-target="10000">0</span>+
+                </div>
+                <div class="uppercase text-sm mt-2">Users Supported</div>
+              </div>
+          
+              <div>
+                <div class="text-4xl font-black">
+                  <span class="counter" data-target="30">0</span>+
+                </div>
+                <div class="uppercase text-sm mt-2">Years of Experience</div>
+              </div>
+          
+              <div>
+                <div class="text-4xl font-black">
+                  <span class="counter" data-target="5">0</span>+
+                </div>
+                <div class="uppercase text-sm mt-2">Industries Served</div>
+              </div>
+          
+              <div>
+                <div class="text-4xl font-black">
+                  <span class="counter" data-target="110">0</span>+
+                </div>
+                <div class="uppercase text-sm mt-2">Countries via Kreston Network</div>
+              </div>
+          
+            </div>
+        </section>
+          
+    <section class="relative py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+  
+      <!-- LEFT CONTENT -->
+      <!-- LEFT CONTENT -->
+    <div>
+    <span class="uppercase text-sm text-green-600 font-semibold">
+      Main Principles
+    </span>
+  
+    <h2 class="text-4xl font-black mt-4 mb-6">
+      Why United Business Trading & Services?
+    </h2>
+  
+    <p class="text-gray-700 leading-relaxed">
+      United Business Trading & Services L.L.C. (also known as Business Tools & Solutions – BTS)
+      has been established to deal exclusively in developing business solutions for organizations,
+      including Accounting Tools, Customized Software, ERP Packages, Business Intelligence,
+      IT Project Consultation, and IT Services.
+    </p>
+  
+    <p class="text-gray-700 leading-relaxed mt-4">
+      UBTS has built strong local infrastructure in the Sultanate of Oman and is supported by
+      leading international partners, enabling the delivery of world-class products with reliable
+      local implementation and long-term support.
+    </p>
+  
+    <!-- SKILL / FOCUS BARS (CAPABILITY INDICATORS) -->
+    <div class="mt-10 space-y-6">
+  
+      <div>
+        <div class="flex justify-between text-sm font-semibold">
+          <span>Tally Prime & Accounting Solutions</span>
+          <span>100%</span>
+        </div>
+        <div class="w-full h-2 bg-gray-200 rounded mt-2">
+          <div class="h-2 bg-tally-blue rounded w-full"></div>
+        </div>
+      </div>
+  
+      <div>
+        <div class="flex justify-between text-sm font-semibold">
+          <span>ERP Solutions & Customization</span>
+          <span>90%</span>
+        </div>
+        <div class="w-full h-2 bg-gray-200 rounded mt-2">
+          <div class="h-2 bg-tally-blue rounded w-[90%]"></div>
+        </div>
+      </div>
+  
+      <div>
+        <div class="flex justify-between text-sm font-semibold">
+          <span>Audit, Taxation & Consultancy Services</span>
+          <span>95%</span>
+        </div>
+        <div class="w-full h-2 bg-gray-200 rounded mt-2">
+          <div class="h-2 bg-tally-blue rounded w-[95%]"></div>
+        </div>
+      </div>
+  
+      <div>
+        <div class="flex justify-between text-sm font-semibold">
+          <span>HRMS & Fixed Asset Management</span>
+          <span>85%</span>
+        </div>
+        <div class="w-full h-2 bg-gray-200 rounded mt-2">
+          <div class="h-2 bg-tally-blue rounded w-[85%]"></div>
+        </div>
+      </div>
+  
+    </div>
+  </div>  
+  
+      <!-- RIGHT GRAPHIC -->
+      <div class="relative">
+        <img
+          src="images/screen.webp"
+          class="w-full rounded-lg shadow-lg"
+        />
+      </div>
+  
+    </div>
+    </section>
+      
+        <!-- WHAT WE DO (3 CARDS) -->
+        <section class="py-24 bg-gray-100">
+          <div class="max-w-7xl mx-auto px-6 text-center">
+            <span class="uppercase text-sm text-tally-blue font-semibold">What We Do</span>
+            <h2 class="text-4xl font-black mt-4">Make Your Business Happen</h2>
+      
+            <div class="grid md:grid-cols-3 gap-10 mt-16">
+      
+              <div class="bg-white shadow-lg p-8">
+                <img src="images/straight.webp" class="mb-6 w-full">
+                <h4 class="text-xl font-bold">Straight</h4>
+                <p class="text-gray-600 mt-2">
+                  Transparent, ethical and straightforward approach in delivering IT and ERP solutions.
+                </p>
+              </div>
+      
+              <div class="bg-white shadow-lg p-8">
+                <img src="images/affordable.webp" class="mb-6 w-full">
+                <h4 class="text-xl font-bold">Affordable</h4>
+                <p class="text-gray-600 mt-2">
+                  Cost-effective ERP and accounting solutions without compromising quality.
+                </p>
+              </div>
+      
+              <div class="bg-white shadow-lg p-8">
+                <img src="images/solutions.webp" class="mb-6 w-full">
+                <h4 class="text-xl font-bold">Correct Solutions</h4>
+                <p class="text-gray-600 mt-2">
+                  Solutions tailored precisely to client requirements and industry needs.
+                </p>
+              </div>
+      
+            </div>
+          </div>
+        </section>
+      
+        <!-- OUR SKILLED LEADERS -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+              <span class="uppercase text-sm text-tally-blue font-semibold">
+                Our Team
+              </span>
+          
+              <h2 class="text-4xl font-black mt-4">
+                Our Skilled Leaders
+              </h2>
+          
+              <div class="grid md:grid-cols-2 gap-12 mt-16 max-w-5xl mx-auto text-left">
+          
+                <!-- Harshendu Shah -->
+                <div class="border-b-4 border-green-500 p-8">
+                  <h4 class="text-2xl font-bold text-gray-900">
+                    Harshendu Shah
+                  </h4>
+                  <p class="uppercase text-sm text-gray-500 mt-1">
+                    Director
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-6">
+                    Harshendu Shah is the Director of United Business Trading & Services LLC
+                    and a Partner of H. C. Shah Chartered Accountants – Muscat. A Chartered
+                    Accountant by profession, H. C. Shah is a member firm of Kreston
+                    International.
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-4">
+                    The organizations headed by Mr. Shah have a staff strength of over 35
+                    professionals experienced in Audit, Accounts, IT, and ISO Consultancy.
+                    He brings over <strong>46 years of overall experience</strong>, with
+                    more than 42 years dedicated to serving clients in the Sultanate of Oman.
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-4">
+                    His expertise includes Audits, Project Reports for industrial setup,
+                    Income Tax Services, and IT Project Consultation. Mr. Shah enjoys the
+                    confidence of over <strong>400+ clients</strong> across trading,
+                    manufacturing, and service sectors.
+                  </p>
+                </div>
+          
+                <!-- Sekar Subramani -->
+                <div class="border-b-4 border-green-500 p-8">
+                  <h4 class="text-2xl font-bold text-gray-900">
+                    Sekar Subramani
+                  </h4>
+                  <p class="uppercase text-sm text-gray-500 mt-1">
+                    Head – Tally
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-6">
+                    Sekar Subramani is the Head of the Tally Division at United Business
+                    Trading & Services LLC. With extensive experience in IT Hardware and
+                    Services, he leads Marketing and Support operations with a strong focus
+                    on customer success.
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-4">
+                    Associated with UBTS for over <strong>15 years</strong>, he has in-depth
+                    knowledge of Tally’s evolution, features, and versions introduced over
+                    time.
+                  </p>
+          
+                  <p class="text-gray-700 leading-relaxed mt-4">
+                    Mr. Sekar has worked with diverse industries including Trading,
+                    Manufacturing, Institutions, Ministries, Construction, and Hospitality.
+                    His core strength lies in delivering effective solutions for
+                    <strong>Group Companies with multiple divisions</strong>.
+                  </p>
+                </div>
+          
+              </div>
+            </div>
+          </section>                   
+      
+      </div>      
+    </div>
+  </div>
+  <script>
+    function openAboutModal() {
+      document.getElementById('aboutModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeAboutModal() {
+      document.getElementById('aboutModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  </script>  
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    let statsAnimated = false;
+  
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        let current = 0;
+        const increment = Math.ceil(target / 80);
+  
+        const updateCounter = () => {
+          current += increment;
+          if (current >= target) {
+            counter.textContent = target.toLocaleString();
+          } else {
+            counter.textContent = current.toLocaleString();
+            requestAnimationFrame(updateCounter);
+          }
+        };
+  
+        updateCounter();
+      });
+    };
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsAnimated) {
+          animateCounters();
+          statsAnimated = true;
+        }
+      });
+    }, { threshold: 0.4 });
+  
+    observer.observe(document.getElementById('statsSection'));
+  </script>  
+
+   <div id="productsModal" class="fixed inset-0 z-[999] hidden">
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeProductsModal()"></div>
+  
+    <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
+      
+      <div class="sticky top-0 bg-tally-blue border-b z-50 px-6 md:px-16 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <h2 class="text-xl md:text-2xl font-black text-white uppercase">Product Portfolio</h2>
+        </div>
+        <button onclick="closeProductsModal()" class="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold hover:bg-red-500 hover:text-white transition-all" style="color: white;">
+            &times;
+        </button>
+      </div>
+  
+      <div class="pb-20">
+        
+        <section class="px-6 md:px-16 py-16 max-w-7xl mx-auto">
+          <div class="flex flex-col lg:flex-row gap-12 items-center">
+            <div class="lg:w-1/2">
+              <span class="text-blue-700 font-bold tracking-widest text-sm uppercase">Business Solutions</span>
+              <h1 class="text-4xl md:text-5xl font-black text-gray-900 mt-2 mb-6 leading-tight">Business Management — Simply Done.</h1>
+              <p class="text-gray-600 leading-relaxed text-lg">
+                We provide businesses of all sizes access to proven technology solutions, ensuring
+                that operational scale does not limit efficiency or growth. From world-renowned
+                accounting platforms to localized ERP systems, our portfolio is designed to meet
+                diverse business requirements across the Sultanate of Oman.                
+              </p>
+            </div>
+            <div class="lg:w-1/2">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800" alt="Data Analytics" class="rounded-lg shadow-2xl">
+            </div>
+          </div>
+        </section>
+  
+        <section class="bg-blue-900 py-20 px-6 text-white">
+          <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-blue-800 pb-8">
+              <div>
+                <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">Authorized Distributor</span>
+                <h2 class="text-4xl font-black mt-2 uppercase">Tally Prime ERP Solution</h2>
+              </div>
+              <p class="text-blue-200 max-w-md mt-4 md:mt-0 italic">
+                Widely adopted by businesses worldwide, Tally Prime is trusted for its simplicity, compliance readiness, and scalability across industries.
+              </p>
+            </div>
+  
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div class="space-y-4">
+                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Accounting & Cash</h4>
+                <ul class="text-sm space-y-2 text-blue-100">
+                  <li>• Multi-currency support</li>
+                  <li>• Receivable & Payable management</li>
+                  <li>• Ageing analysis & Interest calculation</li>
+                  <li>• Cash flow projection & Banking</li>
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Inventory & Mfg</h4>
+                <ul class="text-sm space-y-2 text-blue-100">
+                  <li>• Multi-location/Godown management</li>
+                  <li>• Re-order levels & Stock valuation</li>
+                  <li>• Bill of Materials (BOM)</li>
+                  <li>• Manufacturing journals & Job work</li>
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Statutory (VAT)</h4>
+                <ul class="text-sm space-y-2 text-blue-100">
+                  <li>• VAT compliant & error-free invoicing</li>
+                  <li>• Bilingual (Arabic/English) invoices</li>
+                  <li>• VAT computation & returns</li>
+                  <li>• Secure remote access</li>
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Management Reports</h4>
+                <ul class="text-sm space-y-2 text-blue-100">
+                  <li>• Ratio analysis & Balance Sheets</li>
+                  <li>• Scenario management</li>
+                  <li>• Cost center & Profit center analysis</li>
+                  <li>• Extensive MIS and analytical reporting options</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+          <div class="flex flex-col lg:flex-row gap-16">
+            <div class="lg:w-1/2">
+              <span class="text-green-600 font-bold uppercase tracking-widest text-sm">Localized ERP</span>
+              <h2 class="text-4xl font-black text-gray-900 mt-2 mb-6">BTS ERP (Client-Server)</h2>
+              <p class="text-gray-600 mb-6 leading-relaxed">
+                UBTS is the <strong class="text-gray-900">authorized developer and implementation partner</strong> for BTS ERP in Oman. Developed by a team of Engineers and Accountants!.
+              </p>
+              <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-500">
+                <h4 class="font-bold mb-4">Core Competencies:</h4>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-700">
+                  <li class="flex items-center gap-2">✅ Integrated Customization</li>
+                  <li class="flex items-center gap-2">✅ Client-Server Deployment</li>
+                  <li class="flex items-center gap-2">✅ Deep Inventory Tracking</li>
+                  <li class="flex items-center gap-2">✅ Localized for Omani Law</li>
+                  <li class="flex items-center gap-2">✅ Specialized Manufacturing Menu</li>
+                  <li class="flex items-center gap-2">✅ Advanced MIS Reporting</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="lg:w-1/2">
+              <h4 class="text-xl font-black mb-6 text-gray-900">Industry Adoption & Exposure</h4>
+              <p class="text-sm text-gray-500 mb-8">BTS ERP has been successfully implemented across more than 25 organizations in specialized Omani business sectors.</p>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-blue-50 rounded text-center">
+                  <span class="text-xs font-bold uppercase">Oil & Gas</span>
+                </div>
+                <div class="p-4 bg-blue-50 rounded text-center">
+                  <span class="text-xs font-bold uppercase">Construction</span>
+                </div>
+                <div class="p-4 bg-blue-50 rounded text-center">
+                  <span class="text-xs font-bold uppercase">Electrical</span>
+                </div>
+                <div class="p-4 bg-blue-50 rounded text-center">
+                  <span class="text-xs font-bold uppercase">Building Materials</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <section class="bg-gray-100 py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+              <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-gray-900">Cloud & Specialized Modules</h2>
+                <p class="text-gray-500 mt-4">
+                  Standalone and integrated solutions designed to address specific operational,
+                  compliance, and tracking requirements.
+                </p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+                <!-- eZuite Cloud ERP -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-amber-400">
+                  <h3 class="text-2xl font-black mb-4">eZuite Cloud ERP</h3>
+                  <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    A fully integrated cloud-based ERP platform enabling organizations to manage
+                    Payroll, Sales, Inventory, POS, Asset Tracking, and Ticketing operations from
+                    anywhere with secure access.
+                  </p>
+                  <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">
+                    Cloud ERP Platform (Powered by Enhanzer)
+                  </span>
+                </div>
+          
+                <!-- BTS HRMS -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-blue-600">
+                  <h3 class="text-2xl font-black mb-4">BTS HRMS</h3>
+                  <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    A standalone Human Resource and Payroll Management add-on designed to streamline
+                    employee records, attendance, payroll processing, and statutory requirements.
+                  </p>
+                  <span class="text-xs font-bold text-blue-600 uppercase tracking-widest">
+                    HR & Payroll Add-On
+                  </span>
+                </div>
+          
+                <!-- BTS Fixed Asset -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-green-600">
+                  <h3 class="text-2xl font-black mb-4">BTS Fixed Asset</h3>
+                  <p class="text-gray-600 text-sm mb-6 leading-relaxed">
+                    A dedicated fixed asset management solution supporting asset registration,
+                    transfers, tracking, and multiple depreciation methods with audit-ready reporting.
+                  </p>
+                  <span class="text-xs font-bold text-green-600 uppercase tracking-widest">
+                    Fixed Asset Management
+                  </span>
+                </div>
+          
+              </div>
+            </div>
+          </section>          
+  
+        <section class="py-20 px-6 max-w-7xl mx-auto">
+          <div class="text-center mb-12">
+              <h3 class="text-3xl font-black text-gray-900">Clients Who Trust Our Systems</h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-gray-50">
+                  <th class="p-4 border font-black uppercase text-xs">Sector/Industry</th>
+                  <th class="p-4 border font-black uppercase text-xs">Prestigious Clients & Partners</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr>
+                  <td class="p-4 border font-bold text-blue-800 bg-blue-50">Govt & Education</td>
+                  <td class="p-4 border text-gray-600">Ministry of Finance, Oman German University, Oman Drydock Company</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border font-bold text-green-800 bg-green-50">Industrial & Mfg</td>
+                  <td class="p-4 border text-gray-600">Oman Printers & Stationers, Techno Plastic Industry, Hilong Oil & Gas</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border font-bold text-amber-800 bg-amber-50">F&B and Hospitality</td>
+                  <td class="p-4 border text-gray-600">Oasis Water Company, National Tea Company, Barr Al Jissah</td>
+                </tr>
+                <tr>
+                  <td class="p-4 border font-bold text-gray-800 bg-gray-50">Global Consulting</td>
+                  <td class="p-4 border text-gray-600">Ernst & Young, Kreston International (Audit Wing Partner)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+  
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function openProductsModal() {
+      document.getElementById('productsModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeProductsModal() {
+      document.getElementById('productsModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  </script>
+    
+    <!-- ASK EXPERT MODAL -->
+    <div id="expertModal" class="fixed inset-0 z-[999] hidden">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeExpertModal()"></div>
+  
+    <!-- Modal Content -->
+    <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
+  
+      <!-- Header -->
+      <div class="sticky top-0 bg-tally-blue z-10 px-6 md:px-16 py-5 flex justify-between items-center">
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase">
+          Ask a Tally Expert
+        </h2>
+        <button onclick="closeExpertModal()"
+          class="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold text-white hover:bg-red-500 transition-all">
+          &times;
+        </button>
+      </div>
+  
+      <!-- Body -->
+      <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
+  
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+  
+          <!-- LEFT: TEXT + DIRECT CONTACT -->
+          <div>
+            <span class="uppercase text-sm text-tally-blue font-semibold tracking-widest">
+              Direct Expert Assistance
+            </span>
+  
+            <h3 class="text-4xl font-black text-gray-900 mt-4 mb-6">
+              Get Help from a Certified Tally Professional
+            </h3>
+  
+            <p class="text-gray-600 leading-relaxed mb-8">
+              Please contact our Tally Expert <strong>Mr. Sekar</strong> for all queries related to
+              Tally Prime — including day-to-day operations, usage guidance, statutory compliance,
+              VAT configuration, and management reporting.
+            </p>
+  
+            <!-- Expert Card -->
+            <div class="bg-gray-50 border-l-4 border-tally-green p-6 rounded-xl shadow-md max-w-md">
+              <h4 class="text-xl font-black text-gray-900 mb-2">Mr. Sekar Subramani</h4>
+              <p class="text-sm text-gray-500 uppercase mb-4">Head – Tally Division</p>
+  
+              <div class="space-y-3 text-sm">
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-phone text-tally-blue"></i>
+                  <a href="tel:+96892434429" class="font-bold text-gray-800 hover:underline">
+                    +968 9243 4429
+                  </a>
+                </div>
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-envelope text-tally-blue"></i>
+                  <a href="mailto:sekar@hcshah.co" class="font-bold text-gray-800 hover:underline">
+                    sekar@hcshah.co
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- RIGHT: FORM -->
+          <div class="bg-white border rounded-2xl shadow-2xl p-8 md:p-10">
+  
+            <h4 class="text-2xl font-black text-gray-900 mb-6">
+              Submit Your Tally Query
+            </h4>
+  
+            <form id="expertForm" class="grid grid-cols-1 gap-5 text-gray-800">
+  
+                <input
+                id="expertName"
+                type="text"
+                placeholder="Your Name"
+                class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none"
+                required
+              />
+              
+              <input
+                id="expertPhone"
+                type="text"
+                placeholder="Contact Number"
+                class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none"
+                required
+              />
+              
+              <textarea
+                id="expertQuery"
+                placeholder="Describe your Tally query (operations, VAT, reports, etc.)"
+                class="p-4 bg-gray-50 border rounded-lg h-36 focus:ring-2 focus:ring-tally-green outline-none"
+                required
+              ></textarea>              
+  
+              <button
+                type="submit"
+                class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest">
+                Submit Query
+              </button>
+  
+            </form>
+          </div>
+        </div>
+        <!-- CONTACT INFO GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+
+    <!-- Address -->
+    <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+        <i class="fas fa-map-marker-alt text-xl"></i>
+      </div>
+      <h5 class="font-black text-gray-900 mb-2">Address</h5>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        P.O. Box 2508,<br>
+        P.C. 112, Ruwi,<br>
+        Sultanate of Oman
+      </p>
+    </div>
+  
+    <!-- Opening Hours -->
+    <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+        <i class="fas fa-clock text-xl"></i>
+      </div>
+      <h5 class="font-black text-gray-900 mb-2">Opening Hours</h5>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        Sunday – Thursday<br>
+        <strong>9:00 AM – 1:00 PM</strong><br>
+        <strong>4:00 PM – 7:00 PM</strong>
+      </p>
+    </div>
+  
+    <!-- Email -->
+    <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+        <i class="fas fa-envelope text-xl"></i>
+      </div>
+      <h5 class="font-black text-gray-900 mb-2">Email</h5>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        <a href="mailto:sekar@hcshah.co" class="hover:underline block">sekar@hcshah.co</a>
+        <a href="mailto:biztoolsoman@hcshah.co" class="hover:underline block">biztoolsoman@hcshah.co</a>
+      </p>
+    </div>
+  
+    <!-- Phone -->
+    <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+      <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+        <i class="fas fa-phone text-xl"></i>
+      </div>
+      <h5 class="font-black text-gray-900 mb-2">Phone</h5>
+      <p class="text-sm text-gray-600 leading-relaxed">
+        <strong>+968 9243 4429</strong><br>
+        24705101 / 24707654<br>
+        24786151 / 24786651
+      </p>
+    </div>
+  
+  </div>  
+      </div>
+    </div>
+  </div>
+  <script>
+    function openExpertModal() {
+      document.getElementById('expertModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  
+    function closeExpertModal() {
+      document.getElementById('expertModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  </script>
+  <script>
+    document.getElementById('expertForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById('expertName').value.trim();
+      const phone = document.getElementById('expertPhone').value.trim();
+      const query = document.getElementById('expertQuery').value.trim();
+  
+      if (!name || !phone || !query) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+  
+      const subject = `Tally Support Query – ${name}`;
+      const body = 
+  `Name: ${name}
+  Contact Number: ${phone}
+  
+  Tally Query:
+  ${query}
+  
+  ---
+  Submitted via Ask a Tally Expert
+  UBTS Website`;
+  
+      const mailtoLink =
+        `mailto:sekar@hcshah.co` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+  
+      window.location.href = mailtoLink;
+    });
+  </script>
+  
+  <!-- CONTACT MODAL -->
+   <div id="contactModal" class="fixed inset-0 z-[999] hidden">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeContactModal()"></div>
+  
+    <!-- Modal Content -->
+    <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
+  
+      <!-- Header (MATCHES EXPERT MODAL – NO CHANGE) -->
+      <div class="sticky top-0 bg-tally-blue z-10 px-6 md:px-16 py-5 flex justify-between items-center">
+        <h2 class="text-2xl md:text-3xl font-black text-white uppercase">
+          Contact Us
+        </h2>
+        <button onclick="closeContactModal()"
+          class="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold text-white hover:bg-red-500 transition-all">
+          &times;
+        </button>
+      </div>
+  
+      <!-- BODY -->
+      <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
+  
+        <!-- MAP + FORM -->
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+  
+          <!-- MAP -->
+          <div class="rounded-xl overflow-hidden shadow-xl border">
+            <iframe
+              class="w-full h-[420px]"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3656.2386952601837!2d58.53807967533119!3d23.595770978776173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDM1JzQ0LjgiTiA1OMKwMzInMjYuNCJF!5e0!3m2!1sen!2som!4v1768745419232!5m2!1sen!2som"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <!-- FORM -->
+          <div class="bg-white border rounded-2xl shadow-2xl p-8 md:p-10">
+            <h3 class="text-3xl font-black text-gray-900 mb-6">
+              Let us help your business move forward.
+            </h3>
+  
+            <p class="text-gray-600 mb-8">
+              We’re always happy to hear from you. Contact us for solutions, assistance,
+              or to schedule a visit to our office.
+            </p>
+  
+            <form id="contactForm" class="grid grid-cols-1 gap-5 text-gray-800">
+  
+              <div class="grid md:grid-cols-2 gap-4">
+                <input id="contactName" type="text" placeholder="Name" required
+                  class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none" />
+  
+                <input id="contactEmail" type="email" placeholder="E-mail" required
+                  class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none" />
+              </div>
+  
+              <div class="grid md:grid-cols-2 gap-4">
+                <input id="contactPhone" type="text" placeholder="Phone Number" required
+                  class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none" />
+  
+                <input id="contactSubject" type="text" placeholder="Your Subject"
+                  class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none" />
+              </div>
+  
+              <textarea id="contactMessage" placeholder="Your message here"
+                class="p-4 bg-gray-50 border rounded-lg h-36 focus:ring-2 focus:ring-tally-green outline-none"
+                required></textarea>
+  
+              <button type="submit"
+                class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest w-fit px-12">
+                Submit Now
+              </button>
+  
+            </form>
+          </div>
+        </div>
+  
+        <!-- INFO CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-16">
+  
+          <!-- Location -->
+          <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+            <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+              <i class="fas fa-map-marker-alt text-xl"></i>
+            </div>
+            <h5 class="font-black mb-2">Address</h5>
+            <p class="text-sm text-gray-600">
+              P.O. Box 2508,<br>P.C. 112, Ruwi,<br>Oman
+            </p>
+          </div>
+  
+          <!-- Hours -->
+          <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+            <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+              <i class="fas fa-clock text-xl"></i>
+            </div>
+            <h5 class="font-black mb-2">Opening Hours</h5>
+            <p class="text-sm text-gray-600">
+              Sunday – Thursday<br>
+              9:00AM – 1:00PM<br>
+              4:00AM – 7:00PM
+            </p>
+          </div>
+  
+          <!-- Email -->
+          <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+            <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+              <i class="fas fa-envelope text-xl"></i>
+            </div>
+            <h5 class="font-black mb-2">Email</h5>
+            <p class="text-sm text-gray-600">
+              sekar@hcshah.co<br>
+              biztoolsoman@hcshah.co
+            </p>
+          </div>
+  
+          <!-- Phone -->
+          <div class="bg-white border rounded-xl p-6 shadow-md text-center">
+            <div class="w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full border-2 border-tally-blue text-tally-blue">
+              <i class="fas fa-phone text-xl"></i>
+            </div>
+            <h5 class="font-black mb-2">Phone</h5>
+            <p class="text-sm text-gray-600">
+              +968 9243 4429<br>
+              24705101 / 24707654
+            </p>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openContactModal() {
+      document.getElementById('contactModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  
+    function closeContactModal() {
+      document.getElementById('contactModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  </script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById('contactName').value.trim();
+      const email = document.getElementById('contactEmail').value.trim();
+      const phone = document.getElementById('contactPhone').value.trim();
+      const subjectInput = document.getElementById('contactSubject').value.trim();
+      const message = document.getElementById('contactMessage').value.trim();
+  
+      if (!name || !email || !phone || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+  
+      const subject = subjectInput
+        ? `Contact Form – ${subjectInput}`
+        : `Contact Request – ${name}`;
+  
+      const body =
+  `Name: ${name}
+  Email: ${email}
+  Phone: ${phone}
+  
+  Message:
+  ${message}
+  
+  ---
+  Submitted via Contact Form
+  UBTS Website`;
+  
+      const mailtoLink =
+        `mailto:biztoolsoman@hcshah.co` +
+        `?subject=${encodeURIComponent(subject)}` +
+        `&body=${encodeURIComponent(body)}`;
+  
+      window.location.href = mailtoLink;
+    });
+  </script>  
+    <!--AI ASSISTANT-->
+    <style>
+        #ubts-ai-toggle,
+        #ubts-ai-panel,
+        #ubts-ai-panel * {
+          box-sizing: border-box;
+          font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+        
+        /* Panel */
+        #ubts-ai-panel {
+          position: fixed;
+          top: 0;
+          right: 0;
+          width: 380px;
+          max-width: 100%;
+          height: 100%;
+          background: #fff;
+          z-index: 9998;
+          display: flex;
+          flex-direction: column;
+          transform: translateX(100%);
+          transition: transform .35s ease;
+          box-shadow: -6px 0 30px rgba(0,0,0,.2);
+        }
+        
+        #ubts-ai-panel.open {
+          transform: translateX(0);
+        }
+        
+        /* Header */
+        #ubts-ai-header {
+          background: #00529B;
+          color: #fff;
+          padding: 16px;
+          font-weight: 800;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        #ubts-ai-header span {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        
+        #ubts-ai-close {
+          background: none;
+          border: none;
+          font-size: 20px;
+          color: #fff;
+          cursor: pointer;
+        }
+        
+        /* Messages */
+        #ubts-ai-messages {
+          flex: 1;
+          padding: 16px;
+          overflow-y: auto;
+          background: #f5f7fa;
+        }
+        
+        .ubts-msg {
+          max-width: 85%;
+          margin-bottom: 12px;
+          padding: 12px 14px;
+          border-radius: 12px;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+        
+        .ubts-msg.user {
+          background: #00529B;
+          color: #fff;
+          margin-left: auto;
+        }
+        
+        .ubts-msg.ai {
+          background: #fff;
+          border: 1px solid #e5e7eb;
+        }
+        
+        /* Input */
+        #ubts-ai-input-bar {
+          display: flex;
+          gap: 8px;
+          padding: 12px;
+          border-top: 1px solid #e5e7eb;
+        }
+        
+        #ubts-ai-input {
+          flex: 1;
+          padding: 12px;
+          border-radius: 8px;
+          border: 1px solid #d1d5db;
+          outline: none;
+        }
+        
+        #ubts-ai-send {
+          padding: 0 16px;
+          border-radius: 8px;
+          border: none;
+          background: #F9B233;
+          color: #00529B;
+          font-weight: 800;
+          cursor: pointer;
+        }
+        </style>
+          
+          <div id="ubts-ai-panel">
+            <div id="ubts-ai-header">
+              <span>UBTS AI Assistant</span>
+              <button id="ubts-ai-close">✕</button>
+            </div>
+          
+            <div id="ubts-ai-messages"></div>
+          
+            <div id="ubts-ai-input-bar">
+              <input id="ubts-ai-input" placeholder="Ask about Tally, VAT, reports, licensing…" />
+              <button id="ubts-ai-send">Send</button>
+            </div>
+          </div>
+          <script>
+            if (typeof lucide !== 'undefined' && lucide.createIcons) {
+              lucide.createIcons();
+            }
+            (function () {
+              const toggle = document.getElementById('ubts-ai-toggle');
+              const panel = document.getElementById('ubts-ai-panel');
+              const closeBtn = document.getElementById('ubts-ai-close');
+              const input = document.getElementById('ubts-ai-input');
+              const sendBtn = document.getElementById('ubts-ai-send');
+              const messages = document.getElementById('ubts-ai-messages');
+            
+              const AI_API =
+                'https://digitaloman.ai/api/digitalomanai/dealorbis/chat';
+            
+              let isThinking = false;
+            
+              function addMessage(text, type) {
+                const div = document.createElement('div');
+                div.className = 'ubts-msg ' + type;
+                div.innerHTML = text;
+                messages.appendChild(div);
+                messages.scrollTop = messages.scrollHeight;
+              }
+            
+              async function sendMessage() {
+                if (isThinking) return;
+                const text = input.value.trim();
+                if (!text) return;
+            
+                isThinking = true;
+                input.disabled = true;
+                sendBtn.disabled = true;
+            
+                addMessage(text, 'user');
+                input.value = '';
+                addMessage('Thinking…', 'ai');
+            
+                try {
+                  const res = await fetch(AI_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: text })
+                  });
+            
+                  const data = await res.json();
+                  messages.lastChild.remove();
+                  addMessage(data.reply || 'No response.', 'ai');
+            
+                } catch (err) {
+                  messages.lastChild.remove();
+                  addMessage('AI service unavailable.', 'ai');
+                } finally {
+                  isThinking = false;
+                  input.disabled = false;
+                  sendBtn.disabled = false;
+                  input.focus();
+                }
+              }
+            
+              toggle.onclick = () => {
+                 panel.classList.add('open');
+                 toggle.style.display = 'none';
+                 document.body.classList.add('ubts-ai-open');
+                 input.focus();
+               };
+
+               closeBtn.onclick = () => {
+                 panel.classList.remove('open');
+                 document.body.classList.remove('ubts-ai-open');
+                 setTimeout(() => toggle.style.display = 'flex', 300);
+               };
+
+            
+              sendBtn.onclick = sendMessage;
+              input.addEventListener('keydown', e => {
+                if (e.key === 'Enter') sendMessage();
+              });
+            })();
+            </script>
+</body>
+</html>

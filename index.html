@@ -1647,6 +1647,8 @@
               lucide.createIcons();
             }
             (function () {
+              const conversationHistory = [];
+              const MAX_HISTORY = 6;
               const toggle = document.getElementById('ubts-ai-toggle');
               const panel = document.getElementById('ubts-ai-panel');
               const closeBtn = document.getElementById('ubts-ai-close');
@@ -1659,13 +1661,26 @@
             
               let isThinking = false;
             
-              function addMessage(text, type) {
+              function addMessage(text, type, skipHistory = false) {
                 const div = document.createElement('div');
                 div.className = 'ubts-msg ' + type;
                 div.innerHTML = text;
                 messages.appendChild(div);
                 messages.scrollTop = messages.scrollHeight;
+
+                if (skipHistory) return;
+
+                if (type === 'user') {
+                  conversationHistory.push(`User: ${text}`);
+                } else if (type === 'ai') {
+                  conversationHistory.push(`AI: ${text}`);
+                }
+
+                if (conversationHistory.length > MAX_HISTORY) {
+                  conversationHistory.splice(0, conversationHistory.length - MAX_HISTORY);
+                }
               }
+
             
               async function sendMessage() {
                 if (isThinking) return;
@@ -1678,13 +1693,18 @@
             
                 addMessage(text, 'user');
                 input.value = '';
-                addMessage('Thinking…', 'ai');
+                addMessage('Thinking…', 'ai', true);
+
+                const context =
+                conversationHistory.length
+                  ? `Previous conversation:\n${conversationHistory.join('\n')}\n\nCurrent question:\n${text}`
+                  : text;
             
                 try {
                   const res = await fetch(AI_API, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: text })
+                    body: JSON.stringify({ message: context })
                   });
             
                   const data = await res.json();

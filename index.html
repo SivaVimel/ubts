@@ -32,6 +32,13 @@
           overflow: hidden;
           height: 100vh;
         }
+        @media (max-width: 768px) {
+          .absolute {
+            position: relative !important;
+            inset: auto !important;
+            transform: none !important;
+          }
+        }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -79,12 +86,83 @@
             <img src="images/tallyprime-badge.webp" class="h-10 md:h-12 border-l pl-4 hidden md:block">
             <button id="ubts-ai-toggle" class="bg-tally-green text-white px-4 py-2 rounded text-xs font-black shadow-lg hover:scale-105 transition-transform">Ask UBTS AI</button>
         </div>
+        <button
+          id="mobileMenuBtn"
+          class="lg:hidden text-tally-blue text-2xl font-black"
+          aria-label="Open menu">
+          ☰
+        </button>
     </nav>
+    <!-- MOBILE NAV MENU -->
+   <div id="mobileMenu" class="fixed inset-0 z-[999] hidden">
 
-    <section id="home" class="relative bg-ubts-gold overflow-hidden py-16 px-6 md:px-16 flex flex-col md:flex-row items-center min-h-[800px]">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60" onclick="closeMobileMenu()"></div>
+  
+    <!-- Menu -->
+    <div class="absolute top-0 right-0 w-4/5 max-w-sm h-full bg-white shadow-2xl p-6 animate-slideUp">
+  
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-black text-tally-blue text-lg">Menu</span>
+        <button onclick="closeMobileMenu()" class="text-3xl font-black">&times;</button>
+      </div>
+  
+      <ul class="space-y-6 text-gray-800 font-bold uppercase text-sm">
+  
+        <li>
+          <button onclick="openAboutModal(); closeMobileMenu()"
+            class="w-full text-left py-2 border-b">
+            About
+          </button>
+        </li>
+  
+        <li>
+          <button onclick="openProductsModal(); closeMobileMenu()"
+            class="w-full text-left py-2 border-b">
+            Products
+          </button>
+        </li>
+  
+        <li>
+          <button onclick="openExpertModal(); closeMobileMenu()"
+            class="w-full text-left py-2 border-b">
+            Ask Expert
+          </button>
+        </li>
+  
+        <li>
+          <button onclick="openContactModal(); closeMobileMenu()"
+            class="w-full text-left py-2 border-b">
+            Contact
+          </button>
+        </li>
+  
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  
+    function openMobileMenu() {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  
+    mobileMenuBtn.onclick = openMobileMenu;
+  </script>
+  
+
+    <section id="home" class="relative bg-ubts-gold overflow-hidden py-12 md:py-16 px-6 md:px-16 flex flex-col md:flex-row items-center min-h-[auto] md:min-h-[800px]">
         <div class="md:w-3/5 z-10">
             <h4 class="text-tally-blue font-black mb-2 tracking-widest uppercase">United Business Trading & Services LLC</h4>
-            <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
                 Empowering Oman's Businesses with <span class="text-white">Tally Prime</span>
             </h1>
             <p class="text-gray-800 mb-8 max-w-xl text-lg leading-relaxed">
@@ -96,8 +174,7 @@
             </div>
         </div>
         <div class="md:w-2/5 relative mt-12 md:mt-0">
-            <img src="screen-cta-1.png" alt="Tally Interface" class="w-full drop-shadow-2xl rounded-xl rotate-1">
-            <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border-2 border-tally-green">
+            <div class="relative md:absolute md:-bottom-6 md:-left-6 bg-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border-2 border-tally-green mt-6 md:mt-0">
                 <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16">
                 <div>
                     <p class="text-xs font-bold text-gray-500 uppercase">Certified</p>
@@ -139,7 +216,7 @@
             <!-- Visual -->
             <div class="lg:w-1/2 relative">
                 <img src="images/certificate2.webp" alt="Business Transformation" class="w-full rounded-2xl">
-                <div class="absolute top-1/2 -translate-y-1/2 -right-8 bg-tally-blue text-white p-8 rounded-2xl shadow-2xl hidden md:block">
+                <div class="absolute top-1/2 -translate-y-1/2 -right-8 bg-tally-blue text-white p-8 rounded-2xl shadow-2xl hidden lg:block">
                     <span class="text-6xl font-black block">30+</span>
                     <span class="text-sm font-bold uppercase tracking-widest">Years of Trust</span>
                 </div>
@@ -298,7 +375,7 @@
                 <h2 class="text-3xl font-black mb-4 italic">Ask a Tally Expert</h2>
                 <p class="text-blue-100 max-w-md">Have questions on day-to-day Tally operations, configuration, or reporting? Our experts are ready to assist.</p>
             </div>
-            <a href="#contact" class="bg-ubts-gold text-tally-blue font-black px-10 py-4 rounded-full text-lg shadow-2xl hover:scale-105 transition-transform">
+            <a onclick="openExpertModal()" class="bg-ubts-gold text-tally-blue font-black px-10 py-4 rounded-full text-lg shadow-2xl hover:scale-105">
                 Contact Expert Now
             </a>
         </div>
@@ -317,7 +394,7 @@
             Enterprise-ready accounting, ERP, cloud, and business management solutions designed to scale with your organization.
           </p>
         </div>
-        <img src="prime.png" alt="Tally Prime" class="h-16 hidden md:block" />
+        <img src="images/prime.png" alt="Tally Prime" class="h-16 hidden md:block" />
       </div>
   
       <!-- Products Grid -->
@@ -651,7 +728,7 @@
         </section>
           
     <section class="relative py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
   
       <!-- LEFT CONTENT -->
       <!-- LEFT CONTENT -->
@@ -1152,7 +1229,7 @@
       <!-- Body -->
       <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
   
-        <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
   
           <!-- LEFT: TEXT + DIRECT CONTACT -->
           <div>
@@ -1360,12 +1437,12 @@
       <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
   
         <!-- MAP + FORM -->
-        <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
   
           <!-- MAP -->
           <div class="rounded-xl overflow-hidden shadow-xl border">
             <iframe
-              class="w-full h-[420px]"
+              class="w-full h-[220px] md:h-[420px]"
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3656.2386952601837!2d58.53807967533119!3d23.595770978776173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDM1JzQ0LjgiTiA1OMKwMzInMjYuNCJF!5e0!3m2!1sen!2som!4v1768745419232!5m2!1sen!2som"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade">
@@ -1533,7 +1610,8 @@
           position: fixed;
           top: 0;
           right: 0;
-          width: 380px;
+          width: 100%;
+          max-width: 380px;
           max-width: 100%;
           height: 100%;
           background: #fff;
@@ -1543,6 +1621,11 @@
           transform: translateX(100%);
           transition: transform .35s ease;
           box-shadow: -6px 0 30px rgba(0,0,0,.2);
+        }
+        @media (max-width: 640px) {
+          #ubts-ai-panel {
+            width: 100%;
+          }
         }
         
         #ubts-ai-panel.open {

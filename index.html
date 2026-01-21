@@ -160,28 +160,51 @@
   
 
     <section id="home" class="relative bg-ubts-gold overflow-hidden py-12 md:py-16 px-6 md:px-16 flex flex-col md:flex-row items-center min-h-[auto] md:min-h-[800px]">
-        <div class="md:w-3/5 z-10">
-            <h4 class="text-tally-blue font-black mb-2 tracking-widest uppercase">United Business Trading & Services LLC</h4>
-            <h1 class="text-3xl sm:text-4xl md:text-6xl font-black text-gray-900 mb-6 leading-tight">
-                Empowering Oman's Businesses with <span class="text-white">Tally Prime</span>
-            </h1>
-            <p class="text-gray-800 mb-8 max-w-xl text-lg leading-relaxed">
-                Formerly <strong>Business Tools & Solutions LLC</strong>. Over 30 years of excellence as an exclusive distributor and Tally Gold Partner in the Sultanate of Oman.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a href="#contact" class="bg-tally-blue text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:bg-blue-900 transition-all">Get a Free Consultation</a>
-                <a href="#products" class="bg-white text-tally-blue px-8 py-4 rounded-lg font-bold shadow-md hover:bg-gray-100 transition-all">Explore Products</a>
+      <div class="md:w-3/5 z-10">
+
+        <!-- MAIN BRAND (PRIMARY) -->
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-tally-blue leading-tight mb-4">
+          United Business Trading<br class="hidden sm:block">
+          & Services LLC
+        </h1>
+      
+        <!-- SUPPORTING VALUE STATEMENT -->
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+          Empowering Oman's Businesses with
+          <span class="text-white font-black">Tally Prime</span>
+        </h2>
+      
+        <!-- CONTEXT / LEGACY -->
+        <p class="text-gray-800 mb-8 max-w-xl text-lg leading-relaxed">
+          Formerly <strong>Business Tools & Solutions LLC</strong>. Over
+          <strong>25 years of excellence</strong> as an exclusive distributor and
+          <strong>Tally Gold Partner</strong> in the Sultanate of Oman.
+        </p>
+      
+        <!-- CTA -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact"
+            class="bg-tally-blue text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:bg-blue-900 transition-all">
+            Get a Free Consultation
+          </a>
+          <a href="#products"
+            class="bg-white text-tally-blue px-8 py-4 rounded-lg font-bold shadow-md hover:bg-gray-100 transition-all">
+            Explore Products
+          </a>
+        </div>
+      
+      </div>
+      
+      <div class="md:w-2/5 relative mt-12 md:mt-0 flex justify-center">
+        <div class="relative bg-white p-8 rounded-2xl shadow-2xl border-b-8 border-tally-blue transform hover:-translate-y-2 transition-transform">
+            <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-24 mx-auto mb-4">
+            <div class="text-center">
+                <p class="text-sm font-bold text-gray-400 uppercase tracking-tighter">Official Distributor</p>
+                <p class="text-2xl font-black text-tally-blue">25+ YEARS</p>
+                <p class="text-xs font-bold text-gray-600">IN THE SULTANATE</p>
             </div>
         </div>
-        <div class="md:w-2/5 relative mt-12 md:mt-0">
-            <div class="relative md:absolute md:-bottom-6 md:-left-6 bg-white p-4 rounded-xl shadow-2xl flex items-center gap-4 border-2 border-tally-green mt-6 md:mt-0">
-                <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16">
-                <div>
-                    <p class="text-xs font-bold text-gray-500 uppercase">Certified</p>
-                    <p class="font-black text-tally-blue">20+ Years</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </section>
 
     <section id="about" class="py-24 px-6 md:px-16 bg-white">
@@ -196,7 +219,7 @@
                 </h2>
     
                 <p class="text-gray-600 leading-relaxed mb-6">
-                    United Business Trading & Services LLC (UBTS), established in 1996, has been closely associated with Tally Solutions and its ecosystem for over 30 years. We cater to businesses across Trading, Manufacturing, Engineering, Construction, Finance, and Distribution, supporting over 10,000 users over time.
+                    United Business Trading & Services LLC (UBTS), established in 1996, has been closely associated with Tally Solutions and its ecosystem for over 25 years. We cater to businesses across Trading, Manufacturing, Engineering, Construction, Finance, and Distribution, supporting over 10,000 users over time.
                 </p>
     
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -215,11 +238,7 @@
     
             <!-- Visual -->
             <div class="lg:w-1/2 relative">
-                <img src="images/certificate2.webp" alt="Business Transformation" class="w-full rounded-2xl">
-                <div class="absolute top-1/2 -translate-y-1/2 -right-8 bg-tally-blue text-white p-8 rounded-2xl shadow-2xl hidden lg:block">
-                    <span class="text-6xl font-black block">30+</span>
-                    <span class="text-sm font-bold uppercase tracking-widest">Years of Trust</span>
-                </div>
+                <img src="images/certificate2.webp" alt="Business Transformation" class="w-full rounded-2xl" onclick="openImageLightbox(this.src)">
             </div>
     
         </div>
@@ -381,123 +400,233 @@
         </div>
     </section>
 
-    <!-- PRODUCTS : CORRECTED & CLIENT-SAFE -->
-    <!-- PRODUCTS : COMPLETE UBTS PORTFOLIO -->
+    <!-- PRODUCTS : UBTS LICENSED PRODUCTS -->
 <section id="products" class="py-24 px-6 md:px-16 bg-white">
-    <div class="max-w-7xl mx-auto">
-  
-      <!-- Header -->
-      <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
-        <div>
-          <h2 class="text-4xl md:text-5xl font-black mb-2">Our Product Portfolio</h2>
-          <p class="text-gray-500 max-w-xl">
-            Enterprise-ready accounting, ERP, cloud, and business management solutions designed to scale with your organization.
-          </p>
-        </div>
-        <img src="images/prime.png" alt="Tally Prime" class="h-16 hidden md:block" />
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Header + Toggle -->
+    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-16 gap-8">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-black mb-2">Our Product Portfolio</h2>
+        <p class="text-gray-500 max-w-xl">
+          Official Tally products, subscriptions, and cloud services delivered with local expertise and support.
+        </p>
       </div>
-  
-      <!-- Products Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-  
-        <!-- Tally Prime -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-black text-2xl">Tally Prime ERP</h3>
-            <img src="images/TallyERP.webp" class="h-10" />
-          </div>
-          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-            World-renowned accounting and business management solution best suited for small enterprises, SMEs, and growing organizations.
-          </p>
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li>• Financial Accounting & Compliance</li>
-            <li>• Inventory & Cost Management</li>
-            <li>• VAT & E-Invoicing Ready</li>
-            <li>• Multi-user & Multi-branch Support</li>
-          </ul>
-          <div class="flex gap-2">
-            <span class="text-xs bg-tally-blue text-white px-3 py-1 rounded-full">Silver</span>
-            <span class="text-xs bg-ubts-gold text-tally-blue px-3 py-1 rounded-full">Gold</span>
-          </div>
-        </div>
-  
-        <!-- BTS ERP -->
-        <div class="bg-white p-8 rounded-2xl border-2 border-ubts-gold shadow-lg hover:shadow-2xl transition-all">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-black text-2xl">BTS ERP</h3>
-            <img src="images/BtsERP.webp" class="h-10" />
-          </div>
-          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-            UBTS proprietary ERP solution designed for small and medium businesses with deep localization for Omani business practices.
-          </p>
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li>• Client-Server Architecture</li>
-            <li>• Customizable Business Workflows</li>
-            <li>• Trading & Manufacturing Focus</li>
-            <li>• Scalable Modular Design</li>
-          </ul>
-          <span class="text-xs font-bold uppercase tracking-widest text-ubts-gold">Integrated ERP Solution</span>
-        </div>
-  
-        <!-- eZuite Cloud ERP -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-black text-2xl">eZuite Cloud ERP</h3>
-            <img src="images/zsuite.webp" class="h-10" />
-          </div>
-          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-            Fully integrated cloud ERP solution from Enhanzer, Sri Lanka, enabling end-to-end business management from anywhere.
-          </p>
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li>• Sales, Inventory & Manufacturing</li>
-            <li>• Payroll & HR Management</li>
-            <li>• POS & Ticketing</li>
-            <li>• Cloud-Based & Secure</li>
-          </ul>
-          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">Cloud ERP</span>
-        </div>
-  
-        <!-- BTS HRMS -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-black text-2xl">BTS HRMS</h3>
-            <img src="images/HRMS.webp" class="h-10" />
-          </div>
-          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-            Stand-alone Human Resource Management System designed to streamline employee lifecycle and payroll operations.
-          </p>
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li>• Payroll & Leave Management</li>
-            <li>• Employee Records & Attendance</li>
-            <li>• Statutory Compliance</li>
-            <li>• Integration with ERP Systems</li>
-          </ul>
-          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">HR Management</span>
-        </div>
-  
-        <!-- BTS Fixed Assets -->
-        <div class="bg-gray-50 p-8 rounded-2xl border border-gray-200 hover:shadow-xl transition-all">
-          <div class="flex items-center justify-between mb-6">
-            <h3 class="font-black text-2xl">BTS Fixed Assets</h3>
-            <img src="images/FixedAssets.webp" class="h-10" />
-          </div>
-          <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-            Comprehensive fixed asset management solution supporting multiple depreciation methods and asset tracking.
-          </p>
-          <ul class="text-sm text-gray-600 space-y-2 mb-6">
-            <li>• Asset Register & Transfers</li>
-            <li>• Multiple Depreciation Methods</li>
-            <li>• Audit-Ready Asset Reporting</li>
-            <li>• Integration with Accounting Systems</li>
-          </ul>
-          <span class="text-xs bg-gray-200 text-gray-700 px-3 py-1 rounded-full">Asset Management</span>
-        </div>
-  
+
+      <!-- SILVER / GOLD TOGGLE -->
+      <div class="flex items-center bg-gray-100 rounded-full p-1 w-fit shadow-inner gap-1">
+
+        <!-- SILVER -->
+        <button
+          id="silverBtn"
+          onclick="setPlan('silver')"
+          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-white text-tally-blue shadow transition">
+          <img src="images/prime.png" alt="Tally Prime Silver" class="h-5 w-auto">
+          <span>Silver</span>
+        </button>
+      
+        <!-- GOLD -->
+        <button
+          id="goldBtn"
+          onclick="setPlan('gold')"
+          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition">
+          <img src="images/primegold.webp" alt="Tally Prime Gold" class="h-5 w-auto">
+          <span>Gold</span>
+        </button>
+      
       </div>
-  
+      
     </div>
-  </section>
-  
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      <!-- TALLY PRIME -->
+      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="primeTitle" class="font-black text-2xl">Tally Prime Silver</h3>
+          <img id="primeImg" src="images/tallyprimesilver.jpeg" class="h-10" />
+        </div>
+
+        <p id="primeDesc" class="text-sm text-gray-600 mb-6">
+          Ideal for single-user businesses requiring powerful accounting and compliance features.
+        </p>
+
+        <ul id="primeList" class="text-sm text-gray-600 space-y-2">
+          <!-- JS injects points -->
+        </ul>
+      </div>
+
+      <!-- TALLY SOFTWARE SERVICES -->
+      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="tssTitle" class="font-black text-2xl">TSS Silver – International</h3>
+          <img id="tssImg" src="images/tallytsssilver.webp" class="h-10" />
+        </div>
+
+        <p class="text-sm text-gray-600 mb-6">
+          Annual subscription ensuring continuous statutory compliance and feature upgrades.
+        </p>
+
+        <ul id="tssList" class="text-sm text-gray-600 space-y-2"></ul>
+      </div>
+
+      <!-- TALLY DRIVE -->
+      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="driveTitle" class="font-black text-2xl">Tally Drive – Silver</h3>
+          <img src="images/tallydrive.jpeg" class="h-10" />
+        </div>
+
+        <p class="text-sm text-gray-600 mb-6">
+          Secure cloud access to your Tally data for remote work and business continuity.
+        </p>
+
+        <ul id="driveList" class="text-sm text-gray-600 space-y-2"></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const data = {
+    silver: {
+      prime: {
+        title: "Tally Prime Silver",
+        img: "images/tallyprimesilver.jpeg",
+        desc: "Ideal for single-user businesses requiring powerful accounting and compliance features.",
+        points: [
+          "Fully loaded with all features",
+          "Invoicing & accounting",
+          "Inventory management",
+          "VAT and compliance",
+          "Banking and cashflow",
+          "e-Invoicing and e-way bills",
+          "Connected services",
+          "Business operation",
+          "Zero cost EMI available"
+        ]
+      },
+
+      tss: {
+        title: "TSS Silver – International",
+        img: "images/tallytsssilver.webp",
+        points: [
+          "Statutory updates for Tally Prime",
+          "Compliance continuity for VAT",
+          "Access to product enhancements",
+          "New features released by Tally",
+          "Bug fixes and stability improvements",
+          "Connected services activation",
+          "Regulatory readiness assurance",
+          "Smooth business continuity",
+          "Subscription-based annual renewal"
+        ]
+      },
+
+      drive: {
+        title: "Tally Drive – Silver",
+        points: [
+          "1 GB default cloud storage",
+          "Secure cloud-based Tally access",
+          "Single-user remote accessibility",
+          "Business data backup safety",
+          "Work-from-anywhere capability",
+          "Encrypted data transmission",
+          "No physical server dependency",
+          "Easy upgrade to higher storage",
+          "Subscription-based service"
+        ]
+      }
+    },
+
+    gold: {
+      prime: {
+        title: "Tally Prime Gold",
+        img: "images/tallyprimegold.jpeg",
+        desc: "Multi-user Tally Prime license designed for growing and distributed organizations.",
+        points: [
+          "Fully loaded with all features",
+          "Invoicing & accounting",
+          "Inventory management",
+          "VAT and compliance",
+          "Banking and cashflow",
+          "e-Invoicing and e-way bills",
+          "Connected services",
+          "Business operation",
+          "Zero cost EMI available"
+        ]
+      },
+
+      tss: {
+        title: "TSS Gold – International",
+        img: "images/tallytssgold.webp",
+        points: [
+          "Priority statutory updates",
+          "Continuous compliance assurance",
+          "Multi-user license coverage",
+          "Uninterrupted product upgrades",
+          "Early access to new features",
+          "Enhanced connected services",
+          "Higher operational reliability",
+          "Future-ready regulatory support",
+          "Annual subscription protection"
+        ]
+      },
+
+      drive: {
+        title: "Tally Drive – Gold",
+        points: [
+          "3 GB default cloud storage",
+          "Multi-user remote access support",
+          "Ideal for distributed teams",
+          "High-availability cloud access",
+          "Enhanced data security",
+          "Centralized business operations",
+          "Scalable storage options",
+          "Reduced on-premise infrastructure",
+          "Paid expandable storage plans"
+        ]
+      }
+    }
+  };
+
+  function setPlan(plan) {
+    const p = data[plan];
+
+    // Toggle styles (UNCHANGED)
+    document.getElementById("silverBtn").className =
+      plan === "silver"
+        ? "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-white text-tally-blue shadow transition"
+        : "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition";
+
+    document.getElementById("goldBtn").className =
+      plan === "gold"
+        ? "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-tally-blue shadow transition"
+        : "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition";
+
+    // Prime
+    primeTitle.textContent = p.prime.title;
+    primeImg.src = p.prime.img;
+    primeDesc.textContent = p.prime.desc;
+    primeList.innerHTML = p.prime.points.map(i => `<li>• ${i}</li>`).join("");
+
+    // TSS
+    tssTitle.textContent = p.tss.title;
+    tssImg.src = p.tss.img;
+    tssList.innerHTML = p.tss.points.map(i => `<li>• ${i}</li>`).join("");
+
+    // Drive
+    driveTitle.textContent = p.drive.title;
+    driveList.innerHTML = p.drive.points.map(i => `<li>• ${i}</li>`).join("");
+  }
+
+  // Default load
+  setPlan("silver");
+</script>
+
+
 
   <section id="contact" class="py-24 px-6 md:px-16 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -676,7 +805,7 @@
       
             <p class="text-gray-700 leading-relaxed mt-4">
               UBTS serves organizations across trading, manufacturing, and services sectors with
-              internationally recognized products such as Tally Prime, BTS ERP, and eZuite Cloud ERP,
+              internationally recognized products such as Tally Prime Silver, Tally Prime Gold, Tally Software Services, Tally Drive, and UBTS ERP,
               supported by strong local implementation and support infrastructure.
             </p>
           </div>
@@ -684,8 +813,8 @@
           <!-- IMAGE + EXPERIENCE BOX -->
           <div class="relative">
             <img src="images/office.webp" class="rounded-lg shadow-lg w-full" />
-            <div class="absolute bottom-6 left-6 bg-tally-blue text-white px-8 py-6 rounded-lg">
-                <div class="text-4xl font-black">30+</div>
+            <div class="absolute top-0 right-0 bg-tally-blue text-white px-8 py-6 rounded-lg">
+                <div class="text-4xl font-black">25+</div>
                 <div class="text-sm uppercase tracking-wide">Years of Experience</div>
             </div>              
           </div>
@@ -702,10 +831,17 @@
                 </div>
                 <div class="uppercase text-sm mt-2">Users Supported</div>
               </div>
+
+              <div>
+                <div class="text-4xl font-black">
+                  <span class="counter" data-target="1000">0</span>+
+                </div>
+                <div class="uppercase text-sm mt-2">Clients Served in Oman</div>
+              </div>  
           
               <div>
                 <div class="text-4xl font-black">
-                  <span class="counter" data-target="30">0</span>+
+                  <span class="counter" data-target="25">0</span>+
                 </div>
                 <div class="uppercase text-sm mt-2">Years of Experience</div>
               </div>
@@ -715,14 +851,7 @@
                   <span class="counter" data-target="5">0</span>+
                 </div>
                 <div class="uppercase text-sm mt-2">Industries Served</div>
-              </div>
-          
-              <div>
-                <div class="text-4xl font-black">
-                  <span class="counter" data-target="110">0</span>+
-                </div>
-                <div class="uppercase text-sm mt-2">Countries via Kreston Network</div>
-              </div>
+              </div>            
           
             </div>
         </section>
@@ -759,7 +888,7 @@
   
       <div>
         <div class="flex justify-between text-sm font-semibold">
-          <span>Tally Prime & Accounting Solutions</span>
+          <span>Tally Prime, Cloud Solutions & Accounting Solutions</span>
           <span>100%</span>
         </div>
         <div class="w-full h-2 bg-gray-200 rounded mt-2">
@@ -1011,64 +1140,119 @@
   
         <section class="bg-blue-900 py-20 px-6 text-white">
           <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-blue-800 pb-8">
-              <div>
-                <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">Authorized Distributor</span>
-                <h2 class="text-4xl font-black mt-2 uppercase">Tally Prime ERP Solution</h2>
-              </div>
-              <p class="text-blue-200 max-w-md mt-4 md:mt-0 italic">
-                Widely adopted by businesses worldwide, Tally Prime is trusted for its simplicity, compliance readiness, and scalability across industries.
+        
+            <div class="mb-14 border-b border-blue-800 pb-8">
+              <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">
+                Authorized Tally Partner
+              </span>
+              <h2 class="text-4xl font-black mt-2">
+                Tally Prime – Silver & Gold Editions
+              </h2>
+              <p class="text-blue-200 max-w-3xl mt-4">
+                Tally Prime is a complete business management software that simplifies accounting,
+                invoicing, inventory, banking, compliance, and reporting for businesses of all sizes.
               </p>
             </div>
-  
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div class="space-y-4">
-                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Accounting & Cash</h4>
-                <ul class="text-sm space-y-2 text-blue-100">
-                  <li>• Multi-currency support</li>
-                  <li>• Receivable & Payable management</li>
-                  <li>• Ageing analysis & Interest calculation</li>
-                  <li>• Cash flow projection & Banking</li>
+        
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+              <!-- SILVER -->
+              <div class="bg-blue-800 rounded-xl p-8">
+                <h3 class="text-2xl font-black text-amber-400 mb-4">Tally Prime Silver</h3>
+                <p class="text-blue-100 mb-6 leading-relaxed">
+                  Tally Prime Silver is designed for single-user businesses that require a complete,
+                  reliable, and easy-to-use business management solution. It enables business owners
+                  to manage accounting, invoicing, inventory, banking, and statutory compliance from
+                  a single, integrated platform.
+                </p>
+                <ul class="space-y-2 text-sm text-blue-100">
+                  <li>• End-to-end invoicing and accounting operations</li>
+                  <li>• Inventory and stock movement tracking</li>
+                  <li>• VAT-compliant transactions and reporting</li>
+                  <li>• Banking, reconciliation, and cashflow management</li>
+                  <li>• e-Invoicing and statutory compliance features</li>
+                  <li>• MIS, business reports, and financial insights</li>
                 </ul>
               </div>
-              <div class="space-y-4">
-                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Inventory & Mfg</h4>
-                <ul class="text-sm space-y-2 text-blue-100">
-                  <li>• Multi-location/Godown management</li>
-                  <li>• Re-order levels & Stock valuation</li>
-                  <li>• Bill of Materials (BOM)</li>
-                  <li>• Manufacturing journals & Job work</li>
+        
+              <!-- GOLD -->
+              <div class="bg-blue-800 rounded-xl p-8 border-2 border-amber-400">
+                <h3 class="text-2xl font-black text-amber-400 mb-4">Tally Prime Gold</h3>
+                <p class="text-blue-100 mb-6 leading-relaxed">
+                  Tally Prime Gold is designed for growing organizations that require multiple users
+                  to work simultaneously with shared and centralized business data. It enables secure
+                  collaboration across departments, branches, and locations while maintaining full
+                  control over access and operations.
+                </p>
+                <ul class="space-y-2 text-sm text-blue-100">
+                  <li>• Unlimited concurrent multi-user access</li>
+                  <li>• Centralized accounting and data management</li>
+                  <li>• Multi-branch and multi-location business support</li>
+                  <li>• Advanced user roles, permissions, and controls</li>
+                  <li>• Real-time collaboration across teams</li>
+                  <li>• Scalable solution aligned with business growth</li>
                 </ul>
               </div>
-              <div class="space-y-4">
-                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Statutory (VAT)</h4>
-                <ul class="text-sm space-y-2 text-blue-100">
-                  <li>• VAT compliant & error-free invoicing</li>
-                  <li>• Bilingual (Arabic/English) invoices</li>
-                  <li>• VAT computation & returns</li>
-                  <li>• Secure remote access</li>
-                </ul>
-              </div>
-              <div class="space-y-4">
-                <h4 class="text-amber-400 font-bold border-l-2 border-amber-400 pl-3">Management Reports</h4>
-                <ul class="text-sm space-y-2 text-blue-100">
-                  <li>• Ratio analysis & Balance Sheets</li>
-                  <li>• Scenario management</li>
-                  <li>• Cost center & Profit center analysis</li>
-                  <li>• Extensive MIS and analytical reporting options</li>
-                </ul>
-              </div>
+        
             </div>
           </div>
         </section>
+        
+        <section class="py-20 px-6 bg-gray-100">
+          <div class="max-w-7xl mx-auto">
+        
+            <div class="text-center mb-14">
+              <span class="text-tally-blue font-bold uppercase tracking-widest text-sm">
+                Essential Subscription
+              </span>
+              <h2 class="text-4xl font-black mt-2 text-gray-900">
+                Tally Software Services (TSS)
+              </h2>
+              <p class="text-gray-600 max-w-3xl mx-auto mt-4 leading-relaxed">
+                Tally Software Services (TSS) is an annual subscription that keeps your Tally Prime
+                license up to date, compliant, and connected. It ensures your software remains
+                aligned with statutory changes, business requirements, and new feature releases
+                from Tally Solutions.
+              </p>
+            </div>
+        
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        
+              <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-black text-gray-900 mb-4">What TSS Covers</h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li>• Continuous statutory and regulatory updates</li>
+                  <li>• Compliance with VAT and government requirements</li>
+                  <li>• New feature releases and product enhancements</li>
+                  <li>• Access to connected and online services</li>
+                  <li>• Improved software stability and performance</li>
+                  <li>• Protection from compliance and audit risks</li>
+                </ul>
+              </div>
+        
+              <div class="bg-white rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-black text-gray-900 mb-4">Key Business Benefits</h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                  <li>• Uninterrupted use of Tally Prime</li>
+                  <li>• Always up-to-date statutory compliance</li>
+                  <li>• Seamless access to connected services</li>
+                  <li>• Reduced operational and compliance risk</li>
+                  <li>• Future-ready software environment</li>
+                  <li>• Peace of mind for business owners</li>
+                </ul>
+              </div>
+        
+            </div>
+          </div>
+        </section>                
   
         <section class="py-20 px-6 max-w-7xl mx-auto">
           <div class="flex flex-col lg:flex-row gap-16">
             <div class="lg:w-1/2">
               <span class="text-green-600 font-bold uppercase tracking-widest text-sm">Localized ERP</span>
-              <h2 class="text-4xl font-black text-gray-900 mt-2 mb-6">BTS ERP (Client-Server)</h2>
+              <h2 class="text-4xl font-black text-gray-900 mt-2 mb-6">UBTS ERP (Client-Server)</h2>
               <p class="text-gray-600 mb-6 leading-relaxed">
-                UBTS is the <strong class="text-gray-900">authorized developer and implementation partner</strong> for BTS ERP in Oman. Developed by a team of Engineers and Accountants!.
+                UBTS is the <strong class="text-gray-900">authorized developer and implementation partner</strong> for UBTS ERP in Oman. Developed by a team of Engineers and Accountants!.
               </p>
               <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h4 class="font-bold mb-4">Core Competencies:</h4>
@@ -1085,7 +1269,7 @@
             
             <div class="lg:w-1/2">
               <h4 class="text-xl font-black mb-6 text-gray-900">Industry Adoption & Exposure</h4>
-              <p class="text-sm text-gray-500 mb-8">BTS ERP has been successfully implemented across more than 25 organizations in specialized Omani business sectors.</p>
+              <p class="text-sm text-gray-500 mb-8">UBTS ERP has been successfully implemented across more than 25 organizations in specialized Omani business sectors.</p>
               <div class="grid grid-cols-2 gap-4">
                 <div class="p-4 bg-blue-50 rounded text-center">
                   <span class="text-xs font-bold uppercase">Oil & Gas</span>
@@ -1116,22 +1300,21 @@
               
               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-                <!-- eZuite Cloud ERP -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-amber-400">
-                  <h3 class="text-2xl font-black mb-4">eZuite Cloud ERP</h3>
+                  <h3 class="text-2xl font-black mb-4">Tally Drive</h3>
                   <p class="text-gray-600 text-sm mb-6 leading-relaxed">
-                    A fully integrated cloud-based ERP platform enabling organizations to manage
-                    Payroll, Sales, Inventory, POS, Asset Tracking, and Ticketing operations from
-                    anywhere with secure access.
+                    A secure cloud-based service that enables remote access to Tally data, supporting
+                    flexible work environments without the need for on-premise infrastructure.
                   </p>
                   <span class="text-xs font-bold text-amber-600 uppercase tracking-widest">
-                    Cloud ERP Platform (Powered by Enhanzer)
+                    Cloud Access & Data Hosting
                   </span>
                 </div>
+
           
                 <!-- BTS HRMS -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-blue-600">
-                  <h3 class="text-2xl font-black mb-4">BTS HRMS</h3>
+                  <h3 class="text-2xl font-black mb-4">UBTS HRMS</h3>
                   <p class="text-gray-600 text-sm mb-6 leading-relaxed">
                     A standalone Human Resource and Payroll Management add-on designed to streamline
                     employee records, attendance, payroll processing, and statutory requirements.
@@ -1143,7 +1326,7 @@
           
                 <!-- BTS Fixed Asset -->
                 <div class="bg-white p-8 rounded-xl shadow-lg border-t-8 border-green-600">
-                  <h3 class="text-2xl font-black mb-4">BTS Fixed Asset</h3>
+                  <h3 class="text-2xl font-black mb-4">UBTS Fixed Asset</h3>
                   <p class="text-gray-600 text-sm mb-6 leading-relaxed">
                     A dedicated fixed asset management solution supporting asset registration,
                     transfers, tracking, and multiple depreciation methods with audit-ready reporting.
@@ -1229,7 +1412,7 @@
       <!-- Body -->
       <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
   
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 items-center">
   
           <!-- LEFT: TEXT + DIRECT CONTACT -->
           <div>
@@ -1249,6 +1432,50 @@
   
             <!-- Expert Card -->
             <div class="bg-gray-50 border-l-4 border-tally-green p-6 rounded-xl shadow-md max-w-md">
+              <!-- EXPERT CREDENTIALS -->
+             <div class="mt-10">
+
+               <h5 class="text-sm font-black uppercase tracking-widest text-gray-500 mb-4">
+                 Certifications & Credentials
+               </h5>
+
+               <!-- MAIN IMAGE -->
+               <div class="mb-6">
+                 <img
+                   src="images/sekar-certificate-merit.webp"
+                   alt="Sekar Subramani holding Tally Certificate of Merit"
+                   class="w-full rounded-xl shadow-lg border"
+                   onclick="openImageLightbox(this.src)"
+                 />
+                 <p class="text-xs text-gray-500 mt-2 italic">
+                   Certified by Tally Solutions Pvt. Ltd. – Certificate of Merit
+                 </p>
+               </div>
+
+               <!-- CERTIFICATE GRID -->
+               <div class="grid grid-cols-3 gap-4">
+                 <img
+                   src="images/certificate-1.webp"
+                   alt="Tally Certificate"
+                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                   onclick="openImageLightbox(this.src)"
+                 />
+                 <img
+                   src="images/certificate-2.webp"
+                   alt="Tally Appreciation Certificate"
+                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                   onclick="openImageLightbox(this.src)"
+                 />
+                 <img
+                   src="images/certificate-3.webp"
+                   alt="Tally Training Certificate"
+                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                   onclick="openImageLightbox(this.src)"
+                 />
+               </div>
+
+             </div>
+
               <h4 class="text-xl font-black text-gray-900 mb-2">Mr. Sekar Subramani</h4>
               <p class="text-sm text-gray-500 uppercase mb-4">Head – Tally Division</p>
   
@@ -1282,6 +1509,14 @@
                 id="expertName"
                 type="text"
                 placeholder="Your Name"
+                class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none"
+                required
+              />
+
+              <input
+                id="expertEmail"
+                type="email"
+                placeholder="Email Address"
                 class="p-4 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-tally-green outline-none"
                 required
               />
@@ -1384,17 +1619,20 @@
       e.preventDefault();
   
       const name = document.getElementById('expertName').value.trim();
+      const email = document.getElementById('expertEmail').value.trim();
       const phone = document.getElementById('expertPhone').value.trim();
       const query = document.getElementById('expertQuery').value.trim();
   
-      if (!name || !phone || !query) {
+      if (!name || !email || !phone || !query) {
         alert('Please fill in all required fields.');
         return;
       }
   
       const subject = `Tally Support Query – ${name}`;
-      const body = 
+  
+      const body =
   `Name: ${name}
+  Email: ${email}
   Contact Number: ${phone}
   
   Tally Query:
@@ -1411,7 +1649,7 @@
   
       window.location.href = mailtoLink;
     });
-  </script>
+  </script>  
   
   <!-- CONTACT MODAL -->
    <div id="contactModal" class="fixed inset-0 z-[999] hidden">
@@ -1456,7 +1694,7 @@
             </h3>
   
             <p class="text-gray-600 mb-8">
-              We’re always happy to hear from you. Contact us for solutions, assistance,
+              We're always happy to hear from you. Contact us for solutions, assistance,
               or to schedule a visit to our office.
             </p>
   
@@ -1825,5 +2063,70 @@
               });
             })();
             </script>
+<div
+  id="imageLightbox"
+  class="fixed inset-0 z-[9999] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"
+  onclick="closeImageLightbox()"
+>
+
+  <div
+    class="relative max-w-5xl w-full"
+    onclick="event.stopPropagation()"
+  >
+
+    <button
+      onclick="closeImageLightbox()"
+      class="fixed top-4 right-4 z-[10000]
+             w-12 h-12 flex items-center justify-center
+             rounded-full bg-black/70 text-white text-3xl font-black
+             hover:bg-red-500 transition"
+      aria-label="Close image"
+    >
+      &times;
+    </button>
+
+    <img
+      id="lightboxImage"
+      src=""
+      alt="Preview"
+      class="w-full max-h-[85vh] object-contain rounded-xl shadow-2xl bg-white"
+    />
+  </div>
+</div>
+<script>
+  function openImageLightbox(src) {
+    const lightbox = document.getElementById('imageLightbox');
+    const img = document.getElementById('lightboxImage');
+
+    img.src = src;
+    lightbox.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeImageLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    const img = document.getElementById('lightboxImage');
+
+    lightbox.classList.add('hidden');
+    img.src = '';
+    document.body.style.overflow = '';
+  }
+</script>
+
+<a
+  href="https://api.whatsapp.com/send?phone=96892434429"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-[9999]
+         w-16 h-16 md:w-18 md:h-18
+         flex items-center justify-center
+         rounded-full bg-green-500 text-white
+         shadow-2xl hover:scale-110 hover:bg-green-600
+         transition-transform duration-200"
+  aria-label="Chat on WhatsApp"
+>
+  <i class="fab fa-whatsapp text-4xl"></i>
+</a>
+
 </body>
 </html>

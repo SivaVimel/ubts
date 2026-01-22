@@ -2107,6 +2107,7 @@
         #ubts-ai-input-bar {
           display: flex;
           gap: 8px;
+          align-items: center;  
           padding: 12px;
           border-top: 1px solid #e5e7eb;
         }
@@ -2127,6 +2128,8 @@
           color: #00529B;
           font-weight: 800;
           cursor: pointer;
+          align-items: center;        
+          justify-content: center;
         }
         </style>
           
@@ -2139,110 +2142,221 @@
             <div id="ubts-ai-messages"></div>
           
             <div id="ubts-ai-input-bar">
-              <input id="ubts-ai-input" placeholder="Ask about Tally, VAT, reports, licensing…" />
-              <button id="ubts-ai-send">Send</button>
+              <input
+                id="ubts-ai-input"
+                placeholder="Ask about Tally, VAT, reports, licensing…"
+              />
+            
+              <button
+                id="ubts-ai-action"
+                class="w-12 h-10 rounded-lg flex items-center justify-center
+                       bg-ubts-gold text-tally-blue font-black shadow"
+                aria-label="Voice or Send"
+              >
+                <i data-lucide="mic"></i>
+              </button>
             </div>
           </div>
           <script>
             if (typeof lucide !== 'undefined' && lucide.createIcons) {
               lucide.createIcons();
             }
-            (function () {
-              const conversationHistory = [];
-              const MAX_HISTORY = 6;
-              const toggle = document.getElementById('ubts-ai-toggle');
-              const panel = document.getElementById('ubts-ai-panel');
-              const closeBtn = document.getElementById('ubts-ai-close');
-              const input = document.getElementById('ubts-ai-input');
-              const sendBtn = document.getElementById('ubts-ai-send');
-              const messages = document.getElementById('ubts-ai-messages');
-            
-              const AI_API =
-                'https://digitaloman.ai/api/digitalomanai/dealorbis/chat';
-            
-              let isThinking = false;
-            
-              function addMessage(text, type, skipHistory = false) {
-                const div = document.createElement('div');
-                div.className = 'ubts-msg ' + type;
-                div.innerHTML = text;
-                messages.appendChild(div);
-                messages.scrollTop = messages.scrollHeight;
-
-                if (skipHistory) return;
-
-                if (type === 'user') {
-                  conversationHistory.push(`User: ${text}`);
-                } else if (type === 'ai') {
-                  conversationHistory.push(`AI: ${text}`);
-                }
-
-                if (conversationHistory.length > MAX_HISTORY) {
-                  conversationHistory.splice(0, conversationHistory.length - MAX_HISTORY);
-                }
-              }
-
-            
-              async function sendMessage() {
-                if (isThinking) return;
-                const text = input.value.trim();
-                if (!text) return;
-            
-                isThinking = true;
-                input.disabled = true;
-                sendBtn.disabled = true;
-            
-                addMessage(text, 'user');
-                input.value = '';
-                addMessage('Thinking…', 'ai', true);
-
-                const context =
-                conversationHistory.length
-                  ? `Previous conversation:\n${conversationHistory.join('\n')}\n\nCurrent question:\n${text}`
-                  : text;
-            
-                try {
-                  const res = await fetch(AI_API, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: context })
-                  });
-            
-                  const data = await res.json();
-                  messages.lastChild.remove();
-                  addMessage(data.reply || 'No response.', 'ai');
-            
-                } catch (err) {
-                  messages.lastChild.remove();
-                  addMessage('AI service unavailable.', 'ai');
-                } finally {
-                  isThinking = false;
-                  input.disabled = false;
-                  sendBtn.disabled = false;
-                  input.focus();
-                }
-              }
-            
-              toggle.onclick = () => {
-                 panel.classList.add('open');
-                 toggle.style.display = 'none';
-                 document.body.classList.add('ubts-ai-open');
-                 input.focus();
-               };
-
-               closeBtn.onclick = () => {
-                 panel.classList.remove('open');
-                 document.body.classList.remove('ubts-ai-open');
-                 setTimeout(() => toggle.style.display = 'flex', 300);
-               };
-
-            
-              sendBtn.onclick = sendMessage;
-              input.addEventListener('keydown', e => {
-                if (e.key === 'Enter') sendMessage();
-              });
-            })();
             </script>
+            <script>
+              (function () {
+                const conversationHistory = [];
+                const MAX_HISTORY = 6;
+              
+                const toggle = document.getElementById('ubts-ai-toggle');
+                const panel = document.getElementById('ubts-ai-panel');
+                const closeBtn = document.getElementById('ubts-ai-close');
+              
+                const input = document.getElementById('ubts-ai-input');
+                const actionBtn = document.getElementById('ubts-ai-action');
+                const messages = document.getElementById('ubts-ai-messages');
+              
+                const AI_API =
+                  'https://digitaloman.ai/api/digitalomanai/dealorbis/chat';
+              
+                let isThinking = false;
+                let isRecording = false;
+                let recognition = null;
+                let finalTranscript = '';
+              
+                /* ===============================
+                   BUTTON STATE MANAGEMENT
+                =============================== */
+                function showMic() {
+                  actionBtn.innerHTML = '<i data-lucide="mic"></i>';
+                  actionBtn.classList.remove('bg-red-500');
+                  actionBtn.classList.add('bg-ubts-gold');
+                  lucide.createIcons();
+                }
+              
+                function showStop() {
+                  actionBtn.innerHTML = '<i data-lucide="square"></i>';
+                  actionBtn.classList.remove('bg-ubts-gold');
+                  actionBtn.classList.add('bg-red-500');
+                  lucide.createIcons();
+                }
+              
+                function showSend() {
+                  actionBtn.innerHTML = '<i data-lucide="send"></i>';
+                  actionBtn.classList.remove('bg-red-500');
+                  actionBtn.classList.add('bg-ubts-gold');
+                
+                  if (window.lucide) {
+                    lucide.createIcons();
+                  }
+                }
+
+              
+                /* ===============================
+                   SPEECH RECOGNITION SETUP
+                =============================== */
+                if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+                  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+                  recognition = new SR();
+                  recognition.lang = 'en-US';
+                  recognition.continuous = true;
+                  recognition.interimResults = true;
+              
+                  recognition.onresult = (event) => {
+                    let interim = '';
+              
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                      const transcript = event.results[i][0].transcript;
+                      if (event.results[i].isFinal) {
+                        finalTranscript += transcript + ' ';
+                      } else {
+                        interim += transcript;
+                      }
+                    }
+              
+                    input.value = finalTranscript + interim;
+                  };
+              
+                  recognition.onend = () => {
+                    isRecording = false;
+                    finalTranscript = finalTranscript.trim();
+                    input.value = finalTranscript;
+              
+                    if (input.value.length > 0) {
+                      showSend();
+                    } else {
+                      showMic();
+                    }
+                  };
+                }
+              
+                /* ===============================
+                   MESSAGE HANDLING
+                =============================== */
+                function addMessage(text, type, skipHistory = false) {
+                  const div = document.createElement('div');
+                  div.className = 'ubts-msg ' + type;
+                  div.innerHTML = text;
+                  messages.appendChild(div);
+                  messages.scrollTop = messages.scrollHeight;
+              
+                  if (skipHistory) return;
+              
+                  conversationHistory.push(
+                    `${type === 'user' ? 'User' : 'AI'}: ${text}`
+                  );
+              
+                  if (conversationHistory.length > MAX_HISTORY) {
+                    conversationHistory.splice(0, conversationHistory.length - MAX_HISTORY);
+                  }
+                }
+              
+                async function sendMessage() {
+                  if (isThinking) return;
+                  const text = input.value.trim();
+                  if (!text) return;
+              
+                  isThinking = true;
+                  input.disabled = true;
+              
+                  addMessage(text, 'user');
+                  input.value = '';
+                  showMic();
+              
+                  addMessage('Thinking…', 'ai', true);
+              
+                  const context =
+                    conversationHistory.length
+                      ? `Previous conversation:\n${conversationHistory.join('\n')}\n\nCurrent question:\n${text}`
+                      : text;
+              
+                  try {
+                    const res = await fetch(AI_API, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ message: context })
+                    });
+              
+                    const data = await res.json();
+                    messages.lastChild.remove();
+                    addMessage(data.reply || 'No response.', 'ai');
+                  } catch {
+                    messages.lastChild.remove();
+                    addMessage('AI service unavailable.', 'ai');
+                  } finally {
+                    isThinking = false;
+                    input.disabled = false;
+                    input.focus();
+                  }
+                }
+              
+                /* ===============================
+                   ACTION BUTTON LOGIC
+                =============================== */
+                actionBtn.onclick = () => {
+                  if (isRecording) {
+                    recognition.stop();
+                    return;
+                  }
+              
+                  if (input.value.trim().length > 0) {
+                    sendMessage();
+                    return;
+                  }
+              
+                  // Start recording
+                  if (recognition) {
+                    finalTranscript = '';
+                    input.value = '';
+                    recognition.start();
+                    isRecording = true;
+                    showStop();
+                  }
+                };
+              
+                input.addEventListener('input', () => {
+                  if (isRecording) return;
+                  input.value.trim().length > 0 ? showSend() : showMic();
+                });
+              
+                /* ===============================
+                   PANEL CONTROLS
+                =============================== */
+                toggle.onclick = () => {
+                  panel.classList.add('open');
+                  toggle.style.display = 'none';
+                  document.body.classList.add('ubts-ai-open');
+                  input.focus();
+                  showMic();
+                };
+              
+                closeBtn.onclick = () => {
+                  panel.classList.remove('open');
+                  document.body.classList.remove('ubts-ai-open');
+                  setTimeout(() => toggle.style.display = 'flex', 300);
+                };
+              
+              })();
+              </script>              
 <div
   id="imageLightbox"
   class="fixed inset-0 z-[9999] hidden bg-black/80 backdrop-blur-sm flex items-center justify-center px-4"

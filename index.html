@@ -32,12 +32,24 @@
           overflow: hidden;
           height: 100vh;
         }
+        body.ubts-ai-open #whatsapp-float {
+          display: none !important;
+        }        
         @media (max-width: 768px) {
           .absolute {
             position: relative !important;
             inset: auto !important;
             transform: none !important;
           }
+        }
+        @keyframes subtle-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); background-color: #f3f4f6; } /* Light gray highlight */
+        }
+
+        .animate-attention {
+          animation: subtle-pulse 2s infinite ease-in-out;
+         border: 1px solid #ebeae5; /* Optional: adds a thin border to make it pop */
         }
     </style>
 </head>
@@ -46,8 +58,9 @@
     <div class="bg-tally-blue text-white py-2 px-6 md:px-16 text-xs hidden md:flex justify-between items-center">
         <div class="flex gap-6">
             <span><i class="fas fa-envelope mr-2"></i>biztoolsoman@hcshah.co</span>
-            <span><i class="fas fa-phone mr-2"></i>+968 24786651</span>
-            <span><i class="fas fa-map-marker-alt mr-2"></i>Ruwi, PC 112, Muscat, Oman</span>
+            <span><i class="fas fa-phone mr-2"></i>+968 92434429            </span>
+            <span onclick="window.location.href='https://www.linkedin.com/in/united-business-trading-and-services-llc-ubts-b669b5285/'"><i class="fab fa-linkedin mr-2"></i>LinkedIn</span>
+            <span onclick="window.location.href='https://www.facebook.com/profile.php?id=100080280957273'"><i class="fab fa-facebook-f mr-2"></i>Facebook</span>
         </div>
         <div class="flex gap-4">
             <span class="font-bold">Authorized Tally Gold Partner</span>
@@ -69,7 +82,12 @@
                 <button onclick="openProductsModal()" class="nav-link transition-all pb-1 uppercase">
                   Products
                 </button>
-            </li>              
+            </li>            
+            <li>
+              <button onclick="openAchievementsModal()" class="nav-link transition-all pb-1 uppercase">
+                Achievements
+              </button>
+            </li>  
             <li>
                 <button onclick="openExpertModal()" class="nav-link transition-all pb-1 uppercase">
                   Ask Expert
@@ -122,6 +140,13 @@
             Products
           </button>
         </li>
+
+        <li>
+          <button onclick="openAchievementsModal(); closeMobileMenu()"
+            class="w-full text-left py-2 border-b">
+            Achievements
+          </button>
+        </li>        
   
         <li>
           <button onclick="openExpertModal(); closeMobileMenu()"
@@ -159,53 +184,52 @@
   </script>
   
 
-    <section id="home" class="relative bg-ubts-gold overflow-hidden py-12 md:py-16 px-6 md:px-16 flex flex-col md:flex-row items-center min-h-[auto] md:min-h-[800px]">
-      <div class="md:w-3/5 z-10">
-
-        <!-- MAIN BRAND (PRIMARY) -->
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-tally-blue leading-tight mb-4">
-          United Business Trading<br class="hidden sm:block">
-          & Services LLC
-        </h1>
+  <section id="home" class="relative bg-ubts-gold overflow-hidden pt-8 pb-10 px-6 md:px-16 min-h-fit lg:h-[calc(100vh-120px)] flex flex-col justify-center">
+  
+    <div class="w-full text-center mb-6 md:mb-10">
+      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-tally-blue tracking-tighter leading-none uppercase drop-shadow-sm">
+        United Business Trading & Services <span class="text-white">LLC</span>
+      </h1>
+      <div class="h-1.5 w-32 bg-tally-blue mx-auto mt-4 rounded-full opacity-80"></div>
+    </div>
+  
+    <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-8">
       
-        <!-- SUPPORTING VALUE STATEMENT -->
-        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+      <div class="md:w-3/5 text-center md:text-left">
+        <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
           Empowering Oman's Businesses with
-          <span class="text-white font-black">Tally Prime</span>
+          <span class="bg-tally-blue text-white px-2 py-1 rounded">Tally Prime</span>
         </h2>
       
-        <!-- CONTEXT / LEGACY -->
-        <p class="text-gray-800 mb-8 max-w-xl text-lg leading-relaxed">
-          Formerly <strong>Business Tools & Solutions LLC</strong>. Over
-          <strong>25 years of excellence</strong> as an exclusive distributor and
-          <strong>Tally Gold Partner</strong> in the Sultanate of Oman.
+        <p class="text-gray-800 mb-8 max-w-xl mx-auto md:mx-0 text-base md:text-lg leading-relaxed border-l-4 border-tally-blue pl-4 italic">
+          Formerly <strong>Business Tools & Solutions LLC</strong>. Over 25 years of excellence as a Tally Gold Partner in the Sultanate of Oman.
         </p>
       
-        <!-- CTA -->
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap justify-center md:justify-start gap-4">
           <a href="#contact"
-            class="bg-tally-blue text-white px-8 py-4 rounded-lg font-bold shadow-xl hover:bg-blue-900 transition-all">
-            Get a Free Consultation
+            class="bg-tally-blue text-white px-8 py-4 rounded-xl font-black shadow-[0_10px_20px_rgba(0,82,155,0.3)] hover:bg-blue-900 hover:-translate-y-1 transition-all uppercase text-sm tracking-wider">
+            Get Free Consultation
           </a>
           <a href="#products"
-            class="bg-white text-tally-blue px-8 py-4 rounded-lg font-bold shadow-md hover:bg-gray-100 transition-all">
+            class="bg-white text-tally-blue px-8 py-4 rounded-xl font-black shadow-lg hover:bg-gray-100 hover:-translate-y-1 transition-all uppercase text-sm tracking-wider border border-blue-100">
             Explore Products
           </a>
         </div>
-      
       </div>
       
-      <div class="md:w-2/5 relative mt-12 md:mt-0 flex justify-center">
-        <div class="relative bg-white p-8 rounded-2xl shadow-2xl border-b-8 border-tally-blue transform hover:-translate-y-2 transition-transform">
-            <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-24 mx-auto mb-4">
+      <div class="md:w-2/5 flex justify-center">
+        <div class="relative bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl border-b-8 border-tally-blue transform hover:rotate-2 transition-transform max-w-[280px] md:max-w-full">
+            <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16 md:h-20 mx-auto mb-4">
             <div class="text-center">
-                <p class="text-sm font-bold text-gray-400 uppercase tracking-tighter">Official Distributor</p>
-                <p class="text-2xl font-black text-tally-blue">25+ YEARS</p>
-                <p class="text-xs font-bold text-gray-600">IN THE SULTANATE OF OMAN</p>
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Official Distributor</p>
+                <p class="text-2xl md:text-3xl font-black text-tally-blue">25+ YEARS</p>
+                <p class="text-[10px] font-bold text-gray-600">SULTANATE OF OMAN</p>
             </div>
         </div>
       </div>
-    </section>
+  
+    </div>
+  </section>
 
     <section id="about" class="py-24 px-6 md:px-16 bg-white">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">
@@ -215,7 +239,7 @@
                 <div class="w-20 h-1 bg-tally-green mb-6"></div>
                 
                 <h2 class="text-3xl md:text-4xl font-black text-gray-900 mb-8">
-                    3 Decades of Specialized Tally Expertise in Oman
+                    3 Decades of Specialized Tally Expertise in Sultanate of Oman
                 </h2>
     
                 <p class="text-gray-600 leading-relaxed mb-6">
@@ -401,7 +425,7 @@
     </section>
 
     <!-- PRODUCTS : UBTS LICENSED PRODUCTS -->
-<section id="products" class="py-24 px-6 md:px-16 bg-white">
+  <section id="products" class="py-24 px-6 md:px-16 bg-white">
   <div class="max-w-7xl mx-auto">
 
     <!-- Header + Toggle -->
@@ -420,7 +444,7 @@
         <button
           id="silverBtn"
           onclick="setPlan('silver')"
-          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-white text-tally-blue shadow transition">
+          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-tally-blue shadow transition">
           <img src="images/prime.png" alt="Tally Prime Silver" class="h-5 w-auto">
           <span>Silver</span>
         </button>
@@ -439,7 +463,7 @@
     </div>
 
     <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
       <!-- TALLY PRIME -->
       <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
@@ -483,6 +507,19 @@
         </p>
 
         <ul id="driveList" class="text-sm text-gray-600 space-y-2"></ul>
+      </div>
+
+      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="serverTitle" class="font-black text-2xl">Tally Prime Server – Silver</h3>
+          <img id="serverImg" src="images/tallyprimeserver.webp" class="h-10" />
+        </div>
+      
+        <p id="serverDesc" class="text-sm text-gray-600 mb-6">
+          Dedicated server-based deployment for improved performance and centralized data control.
+        </p>
+      
+        <ul id="serverList" class="text-sm text-gray-600 space-y-2"></ul>
       </div>
 
     </div>
@@ -538,6 +575,20 @@
           "Easy upgrade to higher storage",
           "Subscription-based service"
         ]
+      },
+      server: {
+        title: "Tally Prime Server – Silver",
+        img: "images/tallyprimeserver.webp",
+        desc: "Server-based deployment designed for stable performance in controlled single-user environments.",
+        points: [
+          "Centralized Tally data storage",
+          "Improved performance over local setup",
+          "Secure on-premise server deployment",
+          "Reduced risk of data corruption",
+          "Better control over company data",
+          "Recommended for structured offices",
+          "Works with Tally Prime Silver"
+        ]
       }
     },
 
@@ -588,38 +639,55 @@
           "Reduced on-premise infrastructure",
           "Paid expandable storage plans"
         ]
+      },
+      server: {
+        title: "Tally Prime Server – Gold",
+        img: "images/tallyprimeserver.webp",
+        desc: "High-performance server solution supporting multiple concurrent users with centralized control.",
+        points: [
+          "Dedicated server for multi-user access",
+          "High-speed concurrent user performance",
+          "Centralized company data management",
+          "Improved data security and stability",
+          "Reduced network latency",
+          "Ideal for growing organizations",
+          "Scalable infrastructure design"
+        ]
       }
     }
   };
 
   function setPlan(plan) {
     const p = data[plan];
+    const silverBtn = document.getElementById("silverBtn");
+    const goldBtn = document.getElementById("goldBtn");
 
-    // Toggle styles (UNCHANGED)
-    document.getElementById("silverBtn").className =
-      plan === "silver"
-        ? "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-white text-tally-blue shadow transition"
-        : "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition";
+    // Toggle styles & Animation for SILVER
+    if (plan === "silver") {
+        silverBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-tally-blue shadow transition";
+        goldBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-gray-500 transition animate-attention";
+    } else {
+        silverBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 bg-white transition animate-attention";
+        goldBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-tally-blue shadow transition";
+    }
 
-    document.getElementById("goldBtn").className =
-      plan === "gold"
-        ? "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-tally-blue shadow transition"
-        : "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition";
-
-    // Prime
+    // --- (Rest of your content injection code remains the same) ---
     primeTitle.textContent = p.prime.title;
     primeImg.src = p.prime.img;
     primeDesc.textContent = p.prime.desc;
     primeList.innerHTML = p.prime.points.map(i => `<li>• ${i}</li>`).join("");
 
-    // TSS
     tssTitle.textContent = p.tss.title;
     tssImg.src = p.tss.img;
     tssList.innerHTML = p.tss.points.map(i => `<li>• ${i}</li>`).join("");
 
-    // Drive
     driveTitle.textContent = p.drive.title;
     driveList.innerHTML = p.drive.points.map(i => `<li>• ${i}</li>`).join("");
+
+    serverTitle.textContent = p.server.title;
+    serverImg.src = p.server.img;
+    serverDesc.textContent = p.server.desc;
+    serverList.innerHTML = p.server.points.map(i => `<li>• ${i}</li>`).join("");
   }
 
   // Default load
@@ -636,6 +704,8 @@
         <h2 class="text-4xl font-black mb-6">Get In Touch</h2>
   
         <div class="space-y-6">
+
+          <!-- COMPANY -->
           <div class="flex gap-4 items-start">
             <i class="fas fa-building text-ubts-gold mt-1 text-xl"></i>
             <div>
@@ -645,24 +715,62 @@
               </p>
             </div>
           </div>
-  
+        
+          <!-- PHONE -->
           <div class="flex gap-4 items-start">
             <i class="fas fa-phone-alt text-ubts-gold mt-1 text-xl"></i>
             <div>
               <p class="font-bold text-xl text-tally-green">
-                24786651 | 24707654
+                (212) 24786651 | (212) 24707654
               </p>
               <p class="text-gray-400 text-xs">
                 Working Hours: 9 AM - 1 PM | 4 PM - 7 PM
               </p>
             </div>
           </div>
-  
+        
+          <!-- EMAIL -->
           <div class="flex gap-4 items-start">
             <i class="fas fa-envelope text-ubts-gold mt-1 text-xl"></i>
-            <p class="font-bold">biztoolsoman@hcshah.co</p>
+            <p class="font-bold">
+              <a href="mailto:biztoolsoman@hcshah.co" class="hover:underline">
+                biztoolsoman@hcshah.co
+              </a>
+            </p>
           </div>
-        </div>
+        
+          <!-- SOCIAL LINKS -->
+          <div class="flex gap-4 items-start">
+            <i class="fas fa-share-alt text-blue-400 mt-1 text-xl"></i>
+        
+            <div class="flex gap-6">
+              <!-- LinkedIn -->
+              <a
+                href="https://www.linkedin.com/in/united-business-trading-and-services-llc-ubts-b669b5285/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition"
+                aria-label="UBTS LinkedIn"
+              >
+                <i class="fab fa-linkedin text-xl"></i>
+                LinkedIn
+              </a>
+        
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/profile.php?id=100080280957273"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition"
+                aria-label="UBTS Facebook"
+              >
+                <i class="fab fa-facebook text-xl"></i>
+                Facebook
+              </a>
+            </div>
+          </div>
+        
+        </div>        
   
         <!-- SMALL MAP (FILLS GAP NICELY) -->
         <div class="mt-10 rounded-xl overflow-hidden border border-white/10 shadow-lg">
@@ -1043,7 +1151,7 @@
                   </p>
           
                   <p class="text-gray-700 leading-relaxed mt-4">
-                    Mr. Sekar has worked with diverse industries including Trading,
+                    Mr. Sekar Subramani has worked with diverse industries including Trading,
                     Manufacturing, Institutions, Ministries, Construction, and Hospitality.
                     His core strength lies in delivering effective solutions for
                     <strong>Group Companies with multiple divisions</strong>.
@@ -1196,6 +1304,70 @@
         
             </div>
           </div>
+          <!-- TALLY PRIME SERVER (SILVER & GOLD) -->
+<div class="mt-20 flex justify-center">
+  <div class="w-full max-w-5xl">
+
+    <div class="text-center mb-10">
+      <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">
+        Performance & Infrastructure
+      </span>
+      <h3 class="text-3xl font-black mt-2">
+        Tally Prime Server – Silver & Gold
+      </h3>
+      <p class="text-blue-200 max-w-3xl mx-auto mt-4">
+        Tally Prime Server enhances performance, stability, and data control by hosting
+        Tally Prime on a dedicated server environment, ensuring smooth operations and
+        reliable access for structured business setups.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <!-- SERVER SILVER -->
+      <div class="bg-blue-800 rounded-xl p-8">
+        <h4 class="text-2xl font-black text-amber-400 mb-4">
+          Tally Prime Server – Silver
+        </h4>
+        <p class="text-blue-100 mb-6 leading-relaxed">
+          Tally Prime Server Silver is designed for businesses using Tally Prime Silver
+          that require centralized data storage and improved system performance. It
+          ensures better control over business data while maintaining a stable and
+          secure working environment.
+        </p>
+        <ul class="space-y-2 text-sm text-blue-100">
+          <li>• Centralized data storage on a dedicated server</li>
+          <li>• Improved performance over standalone installations</li>
+          <li>• Reduced risk of data corruption</li>
+          <li>• Secure on-premise server deployment</li>
+          <li>• Recommended for structured office environments</li>
+          <li>• Compatible with Tally Prime Silver</li>
+        </ul>
+      </div>
+
+      <!-- SERVER GOLD -->
+      <div class="bg-blue-800 rounded-xl p-8 border-2 border-amber-400">
+        <h4 class="text-2xl font-black text-amber-400 mb-4">
+          Tally Prime Server – Gold
+        </h4>
+        <p class="text-blue-100 mb-6 leading-relaxed">
+          Tally Prime Server Gold is built for multi-user organizations that require high
+          performance, reliability, and centralized data access. It supports concurrent
+          users efficiently while ensuring data security and operational stability.
+        </p>
+        <ul class="space-y-2 text-sm text-blue-100">
+          <li>• Dedicated server for multi-user environments</li>
+          <li>• High-speed concurrent user performance</li>
+          <li>• Centralized and secure data management</li>
+          <li>• Enhanced stability for large transaction volumes</li>
+          <li>• Reduced network latency and downtime</li>
+          <li>• Ideal for growing and enterprise organizations</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
         </section>
         
         <section class="py-20 px-6 bg-gray-100">
@@ -1252,7 +1424,7 @@
               <span class="text-green-600 font-bold uppercase tracking-widest text-sm">Localized ERP</span>
               <h2 class="text-4xl font-black text-gray-900 mt-2 mb-6">UBTS ERP (Client-Server)</h2>
               <p class="text-gray-600 mb-6 leading-relaxed">
-                UBTS is the <strong class="text-gray-900">authorized developer and implementation partner</strong> for UBTS ERP in Oman. Developed by a team of Engineers and Accountants!.
+                UBTS is the <strong class="text-gray-900">authorized developer and implementation partner</strong> for UBTS ERP in Sultanate of Oman. Developed by a team of Engineers and Accountants!.
               </p>
               <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-green-500">
                 <h4 class="font-bold mb-4">Core Competencies:</h4>
@@ -1380,12 +1552,11 @@
   
   <script>
     function openProductsModal() {
-      document.getElementById('productsModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      openPopup('productsModal');
     }
+
     function closeProductsModal() {
-      document.getElementById('productsModal').classList.add('hidden');
-      document.body.style.overflow = '';
+      history.back();
     }
   </script>
     
@@ -1425,7 +1596,7 @@
             </h3>
   
             <p class="text-gray-600 leading-relaxed mb-8">
-              Please contact our Tally Expert <strong>Mr. Sekar</strong> for all queries related to
+              Please contact our Tally Expert <strong>Mr. Sekar Subramani</strong> for all queries related to
               Tally Prime — including day-to-day operations, usage guidance, statutory compliance,
               VAT configuration, and management reporting.
             </p>
@@ -1433,7 +1604,7 @@
             <!-- Expert Card -->
             <div class="bg-gray-50 border-l-4 border-tally-green p-6 rounded-xl shadow-md max-w-md">
               <!-- EXPERT CREDENTIALS -->
-             <div class="mt-10">
+             <div class="mt-10 mb-4">
 
                <h5 class="text-sm font-black uppercase tracking-widest text-gray-500 mb-4">
                  Certifications & Credentials
@@ -1452,27 +1623,36 @@
                  </p>
                </div>
 
-               <!-- CERTIFICATE GRID -->
-               <div class="grid grid-cols-3 gap-4">
-                 <img
-                   src="images/certificate-1.webp"
-                   alt="Tally Certificate"
-                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
-                   onclick="openImageLightbox(this.src)"
-                 />
-                 <img
-                   src="images/certificate-2.webp"
-                   alt="Tally Appreciation Certificate"
-                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
-                   onclick="openImageLightbox(this.src)"
-                 />
-                 <img
-                   src="images/certificate-3.webp"
-                   alt="Tally Training Certificate"
-                   class="rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
-                   onclick="openImageLightbox(this.src)"
-                 />
-               </div>
+               <div class="grid grid-cols-1 sm:grid-cols-[1.2fr_0.8fr] gap-4">
+
+                <!-- LEFT: VERTICAL CERTIFICATE -->
+                <div class="flex items-center">
+                  <img
+                    src="images/certificate-3.webp"
+                    alt="Tally Training Certificate"
+                    class="w-full max-h-[250px] object-contain rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                    onclick="openImageLightbox(this.src)"
+                  />
+                </div>
+              
+                <!-- RIGHT: STACKED HORIZONTAL CERTIFICATES -->
+                <div class="grid grid-rows-2 gap-4">
+                  <img
+                    src="images/certificate-1.webp"
+                    alt="Tally Certificate"
+                    class="w-full object-cover rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                    onclick="openImageLightbox(this.src)"
+                  />
+              
+                  <img
+                    src="images/certificate-2.webp"
+                    alt="Tally Appreciation Certificate"
+                    class="w-full object-cover rounded-lg shadow-md border hover:scale-105 transition-transform cursor-pointer"
+                    onclick="openImageLightbox(this.src)"
+                  />
+                </div>
+              
+              </div>
 
              </div>
 
@@ -1484,12 +1664,6 @@
                   <i class="fas fa-phone text-tally-blue"></i>
                   <a href="tel:+96892434429" class="font-bold text-gray-800 hover:underline">
                     +968 9243 4429
-                  </a>
-                </div>
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-phone text-tally-blue"></i>
-                  <a href="tel:+96899446958" class="font-bold text-gray-800 hover:underline">
-                    +968 9944 6958
                   </a>
                 </div>
                 <div class="flex items-center gap-3">
@@ -1600,8 +1774,8 @@
       <h5 class="font-black text-gray-900 mb-2">Phone</h5>
       <p class="text-sm text-gray-600 leading-relaxed">
         <strong>+968 9243 4429</strong><br>
-        24705101 / 24707654<br>
-        24786151 / 24786651
+        (212) 24705101 / (212) 24707654<br>
+        (212) 24786151 / (212) 24786651
       </p>
     </div>
   
@@ -1745,7 +1919,7 @@
             </div>
             <h5 class="font-black mb-2">Address</h5>
             <p class="text-sm text-gray-600">
-              P.O. Box 2508,<br>P.C. 112, Ruwi,<br>Oman
+              P.O. Box 2508,<br>P.C. 112, Ruwi,<br>Sultanate of Oman
             </p>
           </div>
   
@@ -2095,7 +2269,7 @@
       id="lightboxImage"
       src=""
       alt="Preview"
-      class="w-full max-h-[85vh] object-contain rounded-xl shadow-2xl bg-white"
+      class="w-full max-h-[85vh] object-contain rounded-xl shadow-2xl"
     />
   </div>
 </div>
@@ -2120,6 +2294,7 @@
 </script>
 
 <a
+  id="whatsapp-float"
   href="https://api.whatsapp.com/send?phone=96892434429"
   target="_blank"
   rel="noopener noreferrer"
@@ -2133,6 +2308,156 @@
 >
   <i class="fab fa-whatsapp text-4xl"></i>
 </a>
+
+<script>
+  let activePopup = null;
+
+  function openPopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (!popup) return;
+
+    popup.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    activePopup = popupId;
+
+    // Push state so back button closes popup
+    history.pushState({ popup: popupId }, '');
+  }
+
+  function closePopup(popupId) {
+    const popup = document.getElementById(popupId);
+    if (!popup) return;
+
+    popup.classList.add('hidden');
+    document.body.style.overflow = '';
+
+    activePopup = null;
+  }
+
+  // Handle browser back button
+  window.addEventListener('popstate', function () {
+    if (activePopup) {
+      closePopup(activePopup);
+    }
+  });
+</script>
+
+<!-- ACHIEVEMENTS MODAL -->
+<div id="achievementsModal" class="fixed inset-0 z-[999] hidden">
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeAchievementsModal()"></div>
+
+  <!-- Modal Content -->
+  <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
+
+    <!-- Header -->
+    <div class="sticky top-0 bg-tally-blue z-10 px-6 md:px-16 py-5 flex justify-between items-center">
+      <h2 class="text-2xl md:text-3xl font-black text-white uppercase">
+        Achievements & Recognition
+      </h2>
+      <button onclick="closeAchievementsModal()"
+        class="w-10 h-10 flex items-center justify-center rounded-full text-2xl font-bold text-white hover:bg-red-500 transition-all">
+        &times;
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="max-w-7xl mx-auto px-6 md:px-16 py-20">
+
+      <!-- Intro -->
+      <div class="mb-14 text-center">
+        <span class="text-tally-blue font-bold uppercase tracking-widest text-sm">
+          Excellence Recognized
+        </span>
+        <h3 class="text-4xl font-black mt-4 text-gray-900">
+          Awards & Certifications
+        </h3>
+        <p class="text-gray-600 max-w-3xl mx-auto mt-4 leading-relaxed">
+          Over the years, United Business Trading & Services LLC has been consistently recognized
+          by Tally Solutions for outstanding performance, customer retention, and service excellence
+          in the Sultanate of Oman.
+        </p>
+      </div>
+
+      <!-- GRID -->
+      <!-- GRID -->
+   <div class="space-y-16">
+
+    <div>
+      <h4 class="text-xl font-black text-gray-900 mb-6 text-center">
+        Certificates of Appreciation
+      </h4>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <img
+          src="images/certificate-retention.webp"
+          alt="Excellentia Retention King Certificate"
+          class="w-full rounded-xl shadow-lg border cursor-pointer hover:scale-105 transition-transform"
+          onclick="openImageLightbox(this.src)"
+        />
+  
+        <img
+          src="images/certificate-stellar.webp"
+          alt="Stellar Renewal Performer Certificate"
+          class="w-full rounded-xl shadow-lg border cursor-pointer hover:scale-105 transition-transform"
+          onclick="openImageLightbox(this.src)"
+        />
+      </div>
+    </div>
+  
+    <!-- INDIVIDUAL TROPHIES -->
+    <div>
+      <h4 class="text-xl font-black text-gray-900 mb-6 text-center">
+        Performance Awards
+      </h4>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <img
+          src="images/trophy-2021.webp"
+          alt="Excellence Retention King 2021-22"
+          class="rounded-xl shadow-xl border cursor-pointer hover:scale-105 transition-transform"
+          onclick="openImageLightbox(this.src)"
+        />
+  
+        <img
+          src="images/trophy-2022.webp"
+          alt="Stellar Renewal Performer 2022-23"
+          class="rounded-xl shadow-xl border cursor-pointer hover:scale-105 transition-transform"
+          onclick="openImageLightbox(this.src)"
+        />
+      </div>
+    </div>
+
+  <!-- HERO: COMBINED TROPHIES -->
+  <div class="max-w-4xl mx-auto text-center">
+    <img
+      src="images/trophy-combined.webp"
+      alt="Tally Excellence Awards"
+      class="w-full rounded-2xl shadow-2xl border cursor-pointer hover:scale-105 transition-transform"
+      onclick="openImageLightbox(this.src)"
+    />
+    <p class="text-sm text-gray-500 mt-4 italic">
+      Recognized by Tally Solutions for Excellence in Performance & Customer Retention
+    </p>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+<script>
+  function openAchievementsModal() {
+    document.getElementById('achievementsModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAchievementsModal() {
+    document.getElementById('achievementsModal').classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+</script>
 
 </body>
 </html>

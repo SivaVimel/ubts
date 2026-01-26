@@ -48,7 +48,7 @@
         }
 
         .animate-attention {
-          animation: subtle-pulse 2s infinite ease-in-out;
+          animation: subtle-pulse 4s infinite ease-in-out;
          border: 1px solid #ebeae5; /* Optional: adds a thin border to make it pop */
         }
     </style>
@@ -188,7 +188,7 @@
   
     <div class="w-full text-center mb-6 md:mb-10">
       <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-tally-blue tracking-tighter leading-none uppercase drop-shadow-sm">
-        United Business Trading & Services LLC</span>
+        United Business Trading & Services LLC
       </h1>
       <div class="h-1.5 w-32 bg-tally-blue mx-auto mt-4 rounded-full opacity-80"></div>
     </div>
@@ -197,8 +197,7 @@
       
       <div class="md:w-3/5 text-center md:text-left">
         <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
-          Empowering Oman's Businesses with
-          <span class="bg-tally-blue text-white px-2 py-1 rounded">Tally Prime</span>
+          Empowering Oman's Businesses with Tally Prime
         </h2>
       
         <p class="text-gray-800 mb-8 max-w-xl mx-auto md:mx-0 text-base md:text-lg leading-relaxed border-l-4 border-tally-blue pl-4 italic">
@@ -425,274 +424,255 @@
     </section>
 
     <!-- PRODUCTS : UBTS LICENSED PRODUCTS -->
-  <section id="products" class="py-24 px-6 md:px-16 bg-white">
-  <div class="max-w-7xl mx-auto">
-
-    <!-- Header + Toggle -->
-    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-16 gap-8">
-      <div>
-        <h2 class="text-4xl md:text-5xl font-black mb-2">Our Product Portfolio</h2>
-        <p class="text-gray-500 max-w-xl">
-          Official Tally products, subscriptions, and cloud services delivered with local expertise and support.
-        </p>
-      </div>
-
-      <!-- SILVER / GOLD TOGGLE -->
-      <div class="flex items-center bg-gray-100 rounded-full p-1 w-fit shadow-inner gap-1">
-
-        <!-- SILVER -->
-        <button
-          id="silverBtn"
-          onclick="setPlan('silver')"
-          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-tally-blue shadow transition">
-          <img src="images/prime.png" alt="Tally Prime Silver" class="h-5 w-auto">
-          <span>Silver</span>
-        </button>
-      
-        <!-- GOLD -->
-        <button
-          id="goldBtn"
-          onclick="setPlan('gold')"
-          class="flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 transition">
-          <img src="images/primegold.webp" alt="Tally Prime Gold" class="h-5 w-auto">
-          <span>Gold</span>
-        </button>
-      
-      </div>
-      
-    </div>
-
-    <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-
-      <!-- TALLY PRIME -->
-      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
-        <div class="flex justify-between items-center mb-6">
-          <h3 id="primeTitle" class="font-black text-2xl">Tally Prime Silver</h3>
-          <img id="primeImg" src="images/tallyprimesilver.jpeg" class="h-10" />
+    <section id="products" class="py-24 px-6 md:px-16 bg-white">
+      <div class="max-w-7xl mx-auto">
+    
+        <div class="flex flex-col lg:flex-row lg:justify-between lg:items-end mb-16 gap-8">
+          <div>
+            <h2 class="text-4xl md:text-5xl font-black mb-2">Our Product Portfolio</h2>
+            <p class="text-gray-500 max-w-xl">
+              Official Tally products, subscriptions, and cloud services delivered with local expertise.
+            </p>
+          </div>
+    
+          <div class="flex items-center bg-gray-100 rounded-full p-1 w-fit shadow-inner gap-2">
+            <button id="silverBtn" onclick="setPlan('silver')" class="flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black transition-all">
+              <span>Silver</span>
+            </button>
+            <button id="goldBtn" onclick="setPlan('gold')" class="flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black transition-all">
+              <span>Gold</span>
+            </button>
+            <button id="serverBtn" onclick="setPlan('server')" class="flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black transition-all">
+              <span>Server</span>
+            </button>
+          </div>
         </div>
-
-        <p id="primeDesc" class="text-sm text-gray-600 mb-6">
-          Ideal for single-user businesses requiring powerful accounting and compliance features.
-        </p>
-
-        <ul id="primeList" class="text-sm text-gray-600 space-y-2">
-          <!-- JS injects points -->
-        </ul>
-      </div>
-
-      <!-- TALLY SOFTWARE SERVICES -->
-      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
-        <div class="flex justify-between items-center mb-6">
-          <h3 id="tssTitle" class="font-black text-2xl">TSS Silver – International</h3>
-          <img id="tssImg" src="images/tallytsssilver.webp" class="h-10" />
+    
+        <div id="standardProducts" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+            <div class="flex justify-between items-center mb-6">
+              <h3 id="primeTitle" class="font-black text-2xl text-gray-900"></h3>
+              <img id="primeImg" src="" class="h-10" />
+            </div>
+            <p id="primeDesc" class="text-sm text-gray-600 mb-6"></p>
+            <ul id="primeList" class="text-sm text-gray-600 space-y-2"></ul>
+          </div>
+    
+          <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+            <div class="flex justify-between items-center mb-6">
+              <h3 id="tssTitle" class="font-black text-2xl text-gray-900"></h3>
+              <img id="tssImg" src="" class="h-10" />
+            </div>
+            <p class="text-sm text-gray-600 mb-6">Annual subscription ensuring continuous statutory compliance and feature upgrades.</p>
+            <ul id="tssList" class="text-sm text-gray-600 space-y-2"></ul>
+          </div>
+    
+          <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
+            <div class="flex justify-between items-center mb-6">
+              <h3 id="driveTitle" class="font-black text-2xl text-gray-900"></h3>
+              <img src="images/tallydrive.jpeg" class="h-10" />
+            </div>
+            <p class="text-sm text-gray-600 mb-6">Secure cloud access to your Tally data for remote work and business continuity.</p>
+            <ul id="driveList" class="text-sm text-gray-600 space-y-2"></ul>
+          </div>
         </div>
-
-        <p class="text-sm text-gray-600 mb-6">
-          Annual subscription ensuring continuous statutory compliance and feature upgrades.
-        </p>
-
-        <ul id="tssList" class="text-sm text-gray-600 space-y-2"></ul>
-      </div>
-
-      <!-- TALLY DRIVE -->
-      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
-        <div class="flex justify-between items-center mb-6">
-          <h3 id="driveTitle" class="font-black text-2xl">Tally Drive – Silver</h3>
-          <img src="images/tallydrive.jpeg" class="h-10" />
+    
+        <div id="serverDetails" class="hidden animate-slideUp">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-12">
+            <div class="bg-tally-blue text-white p-10 rounded-3xl shadow-lg">
+              <h3 class="text-3xl font-black mb-6">What is TallyPrime Server?</h3>
+              <p class="leading-relaxed text-lg opacity-90">
+                TallyPrime Server offers powerful data server capabilities over the Gold license. This server-based Data Architecture unleashes greater concurrency, secured data access, and advanced monitoring capabilities. It is truly an Enterprise Class Product that helps large businesses improve efficiencies.
+              </p>
+            </div>
+    
+            <div class="bg-gray-50 p-10 rounded-3xl border border-gray-200">
+              <h3 class="text-3xl font-black mb-6 text-gray-900">Key Benefits</h3>
+              <div class="space-y-4 text-gray-700">
+                <p>• <strong>Zero Downtime:</strong> Multiple users load companies and save transactions simultaneously without experience delays.</p>
+                <p>• <strong>Security:</strong> Data location is hidden; access is managed via authorized server-level permissions only.</p>
+                <p>• <strong>Productivity:</strong> Continue recording transactions or viewing reports even while taking backups.</p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="bg-yellow-400 p-10 rounded-3xl mb-12">
+            <h3 class="text-2xl font-black mb-6 text-center">Find out if TallyPrime Server is right for your business</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-white/90 p-6 rounded-xl shadow-sm font-bold text-gray-800">
+                Growing business with 10+ employees performing various operations simultaneously.
+              </div>
+              <div class="bg-white/90 p-6 rounded-xl shadow-sm font-bold text-gray-800">
+                Need for an administrator to manage data access and monitor user activities.
+              </div>
+              <div class="bg-white/90 p-6 rounded-xl shadow-sm font-bold text-gray-800">
+                Multiple branches and head office where transactions need smooth consolidation.
+              </div>
+            </div>
+          </div>
         </div>
-
-        <p class="text-sm text-gray-600 mb-6">
-          Secure cloud access to your Tally data for remote work and business continuity.
-        </p>
-
-        <ul id="driveList" class="text-sm text-gray-600 space-y-2"></ul>
+    
       </div>
-
-      <div class="bg-gray-50 p-8 rounded-2xl border hover:shadow-xl transition-all">
-        <div class="flex justify-between items-center mb-6">
-          <h3 id="serverTitle" class="font-black text-2xl">Tally Prime Server – Silver</h3>
-          <img id="serverImg" src="images/tallyprimeserver.webp" class="h-10" />
-        </div>
-      
-        <p id="serverDesc" class="text-sm text-gray-600 mb-6">
-          Dedicated server-based deployment for improved performance and centralized data control.
-        </p>
-      
-        <ul id="serverList" class="text-sm text-gray-600 space-y-2"></ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<script>
-  const data = {
-    silver: {
-      prime: {
-        title: "Tally Prime Silver",
-        img: "images/tallyprimesilver.jpeg",
-        desc: "Ideal for single-user businesses requiring powerful accounting and compliance features.",
-        points: [
-          "Fully loaded with all features",
-          "Invoicing & accounting",
-          "Inventory management",
-          "VAT and compliance",
-          "Banking and cashflow",
-          "e-Invoicing and e-way bills",
-          "Connected services",
-          "Business operation",
-          "Zero cost EMI available"
-        ]
-      },
-
-      tss: {
-        title: "TSS Silver – International",
-        img: "images/tallytsssilver.webp",
-        points: [
-          "Statutory updates for Tally Prime",
-          "Compliance continuity for VAT",
-          "Access to product enhancements",
-          "New features released by Tally",
-          "Bug fixes and stability improvements",
-          "Connected services activation",
-          "Regulatory readiness assurance",
-          "Smooth business continuity",
-          "Subscription-based annual renewal"
-        ]
-      },
-
-      drive: {
-        title: "Tally Drive – Silver",
-        points: [
-          "1 GB default cloud storage",
-          "Secure cloud-based Tally access",
-          "Single-user remote accessibility",
-          "Business data backup safety",
-          "Work-from-anywhere capability",
-          "Encrypted data transmission",
-          "No physical server dependency",
-          "Easy upgrade to higher storage",
-          "Subscription-based service"
-        ]
-      },
-      server: {
-        title: "Tally Prime Server – Silver",
-        img: "images/tallyprimeserver.webp",
-        desc: "Server-based deployment designed for stable performance in controlled single-user environments.",
-        points: [
-          "Centralized Tally data storage",
-          "Improved performance over local setup",
-          "Secure on-premise server deployment",
-          "Reduced risk of data corruption",
-          "Better control over company data",
-          "Recommended for structured offices",
-          "Works with Tally Prime Silver"
-        ]
-      }
+    </section>
+    
+    <script>
+     const productData = {
+  silver: {
+    prime: {
+      title: "Tally Prime Silver",
+      img: "images/tallyprimesilver.jpeg",
+      desc: "Ideal for single-user businesses requiring powerful accounting and compliance features.",
+      points: [
+        "Fully loaded with all features",
+        "Invoicing & accounting",
+        "Inventory management",
+        "VAT and compliance",
+        "Banking and cashflow",
+        "e-Invoicing and e-way bills",
+        "Connected services",
+        "Business operation",
+        "Zero cost EMI available"
+      ]
     },
 
-    gold: {
-      prime: {
-        title: "Tally Prime Gold",
-        img: "images/tallyprimegold.jpeg",
-        desc: "Multi-user Tally Prime license designed for growing and distributed organizations.",
-        points: [
-          "Fully loaded with all features",
-          "Invoicing & accounting",
-          "Inventory management",
-          "VAT and compliance",
-          "Banking and cashflow",
-          "e-Invoicing and e-way bills",
-          "Connected services",
-          "Business operation",
-          "Zero cost EMI available"
-        ]
-      },
+    tss: {
+      title: "TSS Silver",
+      img: "images/tallytsssilver.webp",
+      points: [
+        "Statutory updates for Tally Prime",
+        "Compliance continuity for VAT",
+        "Access to product enhancements",
+        "New features released by Tally",
+        "Bug fixes and stability improvements",
+        "Connected services activation",
+        "Regulatory readiness assurance",
+        "Smooth business continuity",
+        "Subscription-based annual renewal"
+      ]
+    },
 
-      tss: {
-        title: "TSS Gold – International",
-        img: "images/tallytssgold.webp",
-        points: [
-          "Priority statutory updates",
-          "Continuous compliance assurance",
-          "Multi-user license coverage",
-          "Uninterrupted product upgrades",
-          "Early access to new features",
-          "Enhanced connected services",
-          "Higher operational reliability",
-          "Future-ready regulatory support",
-          "Annual subscription protection"
-        ]
-      },
-
-      drive: {
-        title: "Tally Drive – Gold",
-        points: [
-          "3 GB default cloud storage",
-          "Multi-user remote access support",
-          "Ideal for distributed teams",
-          "High-availability cloud access",
-          "Enhanced data security",
-          "Centralized business operations",
-          "Scalable storage options",
-          "Reduced on-premise infrastructure",
-          "Paid expandable storage plans"
-        ]
-      },
-      server: {
-        title: "Tally Prime Server – Gold",
-        img: "images/tallyprimeserver.webp",
-        desc: "High-performance server solution supporting multiple concurrent users with centralized control.",
-        points: [
-          "Dedicated server for multi-user access",
-          "High-speed concurrent user performance",
-          "Centralized company data management",
-          "Improved data security and stability",
-          "Reduced network latency",
-          "Ideal for growing organizations",
-          "Scalable infrastructure design"
-        ]
-      }
+    drive: {
+      title: "Tally Drive – Silver",
+      points: [
+        "1 GB default cloud storage",
+        "Secure cloud-based Tally access",
+        "Single-user remote accessibility",
+        "Business data backup safety",
+        "Work-from-anywhere capability",
+        "Encrypted data transmission",
+        "No physical server dependency",
+        "Easy upgrade to higher storage",
+        "Subscription-based service"
+      ]
     }
-  };
+  },
 
-  function setPlan(plan) {
-    const p = data[plan];
-    const silverBtn = document.getElementById("silverBtn");
-    const goldBtn = document.getElementById("goldBtn");
+  gold: {
+    prime: {
+      title: "Tally Prime Gold",
+      img: "images/tallyprimegold.jpeg",
+      desc: "Multi-user license designed for growing and distributed organizations.",
+      points: [
+        "Fully loaded with all features",
+        "Invoicing & accounting",
+        "Inventory management",
+        "VAT and compliance",
+        "Banking and cashflow",
+        "e-Invoicing and e-way bills",
+        "Connected services",
+        "Business operation",
+        "Zero cost EMI available"
+      ]
+    },
 
-    // Toggle styles & Animation for SILVER
-    if (plan === "silver") {
-        silverBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-tally-blue shadow transition";
-        goldBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-gray-500 transition animate-attention";
-    } else {
-        silverBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black text-gray-500 bg-white transition animate-attention";
-        goldBtn.className = "flex items-center gap-2 px-5 py-2 rounded-full text-sm font-black bg-ubts-gold text-tally-blue shadow transition";
+    tss: {
+      title: "TSS Gold",
+      img: "images/tallytssgold.webp",
+      points: [
+        "Priority statutory updates",
+        "Continuous compliance assurance",
+        "Multi-user license coverage",
+        "Uninterrupted product upgrades",
+        "Early access to new features",
+        "Enhanced connected services",
+        "Higher operational reliability",
+        "Future-ready regulatory support",
+        "Annual subscription protection"
+      ]
+    },
+
+    drive: {
+      title: "Tally Drive – Gold",
+      points: [
+        "3 GB default cloud storage",
+        "Multi-user remote access support",
+        "Ideal for distributed teams",
+        "High-availability cloud access",
+        "Enhanced data security",
+        "Centralized business operations",
+        "Scalable storage options",
+        "Reduced on-premise infrastructure",
+        "Paid expandable storage plans"
+      ]
     }
-
-    // --- (Rest of your content injection code remains the same) ---
-    primeTitle.textContent = p.prime.title;
-    primeImg.src = p.prime.img;
-    primeDesc.textContent = p.prime.desc;
-    primeList.innerHTML = p.prime.points.map(i => `<li>• ${i}</li>`).join("");
-
-    tssTitle.textContent = p.tss.title;
-    tssImg.src = p.tss.img;
-    tssList.innerHTML = p.tss.points.map(i => `<li>• ${i}</li>`).join("");
-
-    driveTitle.textContent = p.drive.title;
-    driveList.innerHTML = p.drive.points.map(i => `<li>• ${i}</li>`).join("");
-
-    serverTitle.textContent = p.server.title;
-    serverImg.src = p.server.img;
-    serverDesc.textContent = p.server.desc;
-    serverList.innerHTML = p.server.points.map(i => `<li>• ${i}</li>`).join("");
   }
-
-  // Default load
-  setPlan("silver");
-</script>
+};
+    
+      function setPlan(plan) {
+        const silverBtn = document.getElementById("silverBtn");
+        const goldBtn = document.getElementById("goldBtn");
+        const serverBtn = document.getElementById("serverBtn");
+        const standardGrid = document.getElementById("standardProducts");
+        const serverDetails = document.getElementById("serverDetails");
+    
+        // Reset Classes
+        [silverBtn].forEach(btn => {
+          btn.className = "flex items-center gap-2 px-6 py-2 bg-blue-200 rounded-full text-sm font-black text-gray-500 transition-all animate-attention";
+        });
+        [goldBtn].forEach(btn => {
+          btn.className = "flex items-center gap-2 px-6 py-2 bg-yellow-200 rounded-full text-sm font-black text-gray-500 transition-all animate-attention";
+        });
+        [serverBtn].forEach(btn => {
+          btn.className = "flex items-center gap-2 px-6 py-2 bg-green-200 rounded-full text-sm font-black text-gray-500 transition-all animate-attention";
+        });
+    
+        if (plan === 'silver') {
+          silverBtn.className = "flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black bg-white text-tally-blue shadow-md transition-all";
+          standardGrid.classList.remove('hidden');
+          serverDetails.classList.add('hidden');
+          updateGrid('silver');
+        } 
+        else if (plan === 'gold') {
+          goldBtn.className = "flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black bg-white text-yellow-600 shadow-md transition-all";
+          standardGrid.classList.remove('hidden');
+          serverDetails.classList.add('hidden');
+          updateGrid('gold');
+        } 
+        else if (plan === 'server') {
+          serverBtn.className = "flex items-center gap-2 px-6 py-2 rounded-full text-sm font-black bg-white text-green-600 shadow-md transition-all";
+          standardGrid.classList.add('hidden');
+          serverDetails.classList.remove('hidden');
+        }
+      }
+    
+      function updateGrid(plan) {
+        const p = productData[plan];
+        document.getElementById("primeTitle").textContent = p.prime.title;
+        document.getElementById("primeImg").src = p.prime.img;
+        document.getElementById("primeDesc").textContent = p.prime.desc;
+        document.getElementById("primeList").innerHTML = p.prime.points.map(i => `<li>• ${i}</li>`).join("");
+    
+        document.getElementById("tssTitle").textContent = p.tss.title;
+        document.getElementById("tssImg").src = p.tss.img;
+        document.getElementById("tssList").innerHTML = p.tss.points.map(i => `<li>• ${i}</li>`).join("");
+    
+        document.getElementById("driveTitle").textContent = p.drive.title;
+        document.getElementById("driveList").innerHTML = p.drive.points.map(i => `<li>• ${i}</li>`).join("");
+      }
+    
+      // Initial load
+      setPlan('silver');
+    </script>
 
 
 
@@ -721,7 +701,7 @@
             <i class="fas fa-phone-alt text-ubts-gold mt-1 text-xl"></i>
             <div>
               <p class="font-bold text-xl text-tally-green">
-                (212) 24786651 | (212) 24707654
+                24786651 | 24707654 Ext. 212
               </p>
               <p class="text-gray-400 text-xs">
                 Working Hours: 9 AM - 1 PM | 4 PM - 7 PM
@@ -882,10 +862,7 @@
       <div class="w-full">
 
         <!-- HERO / BREADCRUMB SECTION -->
-        <section 
-          class="w-full py-28 relative bg-center bg-cover"
-          style="background-image: url('/images/aboutus.webp');"
-        >
+        <section class="w-full pt-28 pb-12 relative bg-center bg-cover" style="background-image: url('/images/aboutus.webp');">
           <!-- Overlay -->
           <div class="absolute inset-0 bg-white/80"></div>
 
@@ -901,7 +878,7 @@
         </section>
       
         <!-- ABOUT COMPANY (TEXT LEFT / IMAGE RIGHT) -->
-        <section class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <section class="max-w-7xl mx-auto px-6 pt-8 pb-20 grid md:grid-cols-2 gap-12 items-center">
           
           <!-- TEXT -->
           <div>
@@ -1304,70 +1281,109 @@
         
             </div>
           </div>
-          <!-- TALLY PRIME SERVER (SILVER & GOLD) -->
-<div class="mt-20 flex justify-center">
-  <div class="w-full max-w-5xl">
-
-    <div class="text-center mb-10">
-      <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">
-        Performance & Infrastructure
-      </span>
-      <h3 class="text-3xl font-black mt-2">
-        Tally Prime Server – Silver & Gold
-      </h3>
-      <p class="text-blue-200 max-w-3xl mx-auto mt-4">
-        Tally Prime Server enhances performance, stability, and data control by hosting
-        Tally Prime on a dedicated server environment, ensuring smooth operations and
-        reliable access for structured business setups.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-
-      <!-- SERVER SILVER -->
-      <div class="bg-blue-800 rounded-xl p-8">
-        <h4 class="text-2xl font-black text-amber-400 mb-4">
-          Tally Prime Server – Silver
-        </h4>
-        <p class="text-blue-100 mb-6 leading-relaxed">
-          Tally Prime Server Silver is designed for businesses using Tally Prime Silver
-          that require centralized data storage and improved system performance. It
-          ensures better control over business data while maintaining a stable and
-          secure working environment.
-        </p>
-        <ul class="space-y-2 text-sm text-blue-100">
-          <li>• Centralized data storage on a dedicated server</li>
-          <li>• Improved performance over standalone installations</li>
-          <li>• Reduced risk of data corruption</li>
-          <li>• Secure on-premise server deployment</li>
-          <li>• Recommended for structured office environments</li>
-          <li>• Compatible with Tally Prime Silver</li>
-        </ul>
-      </div>
-
-      <!-- SERVER GOLD -->
-      <div class="bg-blue-800 rounded-xl p-8 border-2 border-amber-400">
-        <h4 class="text-2xl font-black text-amber-400 mb-4">
-          Tally Prime Server – Gold
-        </h4>
-        <p class="text-blue-100 mb-6 leading-relaxed">
-          Tally Prime Server Gold is built for multi-user organizations that require high
-          performance, reliability, and centralized data access. It supports concurrent
-          users efficiently while ensuring data security and operational stability.
-        </p>
-        <ul class="space-y-2 text-sm text-blue-100">
-          <li>• Dedicated server for multi-user environments</li>
-          <li>• High-speed concurrent user performance</li>
-          <li>• Centralized and secure data management</li>
-          <li>• Enhanced stability for large transaction volumes</li>
-          <li>• Reduced network latency and downtime</li>
-          <li>• Ideal for growing and enterprise organizations</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</div>
+          <div class="mt-20 flex justify-center">
+            <div class="w-full max-w-6xl">
+          
+              <div class="text-center mb-16">
+                <span class="text-amber-400 font-bold uppercase tracking-widest text-sm">
+                  Enterprise Class Solution
+                </span>
+                <h3 class="text-4xl md:text-5xl font-black mt-2 text-white">
+                  TallyPrime Server
+                </h3>
+                <div class="h-1 w-20 bg-amber-400 mx-auto mt-6"></div>
+              </div>
+          
+              <div class="bg-blue-900/50 border border-blue-700 rounded-3xl p-8 md:p-12 mb-12">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                  <div>
+                    <h4 class="text-2xl font-bold text-amber-400 mb-6">Unleashing Enterprise Data Architecture</h4>
+                    <p class="text-blue-100 leading-relaxed text-lg">
+                      TallyPrime Server offers powerful data server capabilities beyond the standard multi-user license. This server-based Data Architecture unleashes greater concurrency, secured data access, and advanced monitoring capabilities. 
+                    </p>
+                    <p class="text-blue-200 mt-4 leading-relaxed">
+                      It is truly an <strong>Enterprise Class Product</strong> designed to help fast-growing medium and large businesses improve their business efficiencies by providing a dedicated path for data traffic.
+                    </p>
+                  </div>
+                  <div class="bg-blue-800 p-6 rounded-2xl border border-blue-600 shadow-inner">
+                     <ul class="space-y-4 text-blue-100">
+                       <li class="flex items-start gap-3">
+                         <span class="text-amber-400 text-xl">✓</span>
+                         <span>Optimized for 10+ concurrent users</span>
+                       </li>
+                       <li class="flex items-start gap-3">
+                         <span class="text-amber-400 text-xl">✓</span>
+                         <span>Exclusive Data Server name access (Hidden Path)</span>
+                       </li>
+                       <li class="flex items-start gap-3">
+                         <span class="text-amber-400 text-xl">✓</span>
+                         <span>Real-time monitoring and session control</span>
+                       </li>
+                     </ul>
+                  </div>
+                </div>
+              </div>
+          
+              
+          
+              <h4 class="text-2xl font-black text-center text-white mb-10">Key Benefits of TallyPrime Server</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+                
+                <div class="bg-blue-800 rounded-2xl p-8 border-l-4 border-amber-400">
+                  <h5 class="text-xl font-bold text-white mb-3">Optimal Utilization of Man Hours</h5>
+                  <p class="text-blue-100 text-sm leading-relaxed">
+                    Multiple users will be able to simultaneously load companies, save transactions, export reports, and print without experiencing any downtime. This increases the velocity at which tasks are completed, ensuring your data is always real-time, consistent, and accurate.
+                  </p>
+                </div>
+          
+                <div class="bg-blue-800 rounded-2xl p-8 border-l-4 border-amber-400">
+                  <h5 class="text-xl font-bold text-white mb-3">Enhanced Data Security</h5>
+                  <p class="text-blue-100 text-sm leading-relaxed">
+                    The location of the data on the server is kept hidden; the name of the data server is sufficient to operate. Operations like backup and restore are controlled with server-level permissions, ensuring better control over user access.
+                  </p>
+                </div>
+          
+                <div class="bg-blue-800 rounded-2xl p-8 border-l-4 border-amber-400">
+                  <h5 class="text-xl font-bold text-white mb-3">Zero Downtime Operations</h5>
+                  <p class="text-blue-100 text-sm leading-relaxed">
+                    Continue recording transactions or viewing reports while taking backups with no compromise on speed. It limits discrepancies at the client end and ensures that operations of other users never get impacted during maintenance.
+                  </p>
+                </div>
+          
+                <div class="bg-blue-800 rounded-2xl p-8 border-l-4 border-amber-400">
+                  <h5 class="text-xl font-bold text-white mb-3">Comprehensive Monitoring</h5>
+                  <p class="text-blue-100 text-sm leading-relaxed">
+                    Authorized users can manage user sessions—tracking who is logged in and what activities are in progress. You can disconnect users if required to optimize system usage and enhance overall team productivity.
+                  </p>
+                </div>
+          
+              </div>
+          
+              <div class="bg-white rounded-3xl p-8 md:p-12">
+                <h4 class="text-3xl font-black text-blue-900 text-center mb-12">Frequently Asked Questions</h4>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                  <div>
+                    <h5 class="font-bold text-blue-800 mb-2">Is TallyPrime Server suitable for businesses with multiple users?</h5>
+                    <p class="text-gray-600 text-sm">Yes, if your business has 10+ employees working simultaneously on various tasks, TallyPrime Server ensures seamless multi-user access without slowdowns.</p>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-blue-800 mb-2">Can I control and monitor user access to company data?</h5>
+                    <p class="text-gray-600 text-sm">Absolutely! TallyPrime Server provides centralized control, allowing an administrator to manage user access and monitor activity for better security and efficiency.</p>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-blue-800 mb-2">Will TallyPrime Server help in managing multiple branch operations?</h5>
+                    <p class="text-gray-600 text-sm">Yes, in businesses where multiple users are connected to the same data, an administrator can manage data access and monitor activities across all branches while users operate smoothly.</p>
+                  </div>
+                  <div>
+                    <h5 class="font-bold text-blue-800 mb-2">Is TallyPrime Server the right fit for my business?</h5>
+                    <p class="text-gray-600 text-sm">It is ideal for businesses needing high reliability and secure data control. It ensures uninterrupted operations, optimized performance, and centralized monitoring for enhanced efficiency.</p>
+                  </div>
+                </div>
+              </div>
+          
+            </div>
+          </div>
         </section>
         
         <section class="py-20 px-6 bg-gray-100">
@@ -1667,6 +1683,12 @@
                   </a>
                 </div>
                 <div class="flex items-center gap-3">
+                  <i class="fas fa-phone text-tally-blue"></i>
+                  <a href="tel:+9689944 6958" class="font-bold text-gray-800 hover:underline">
+                    +968 9944 6958
+                  </a>
+                </div>
+                <div class="flex items-center gap-3">
                   <i class="fas fa-envelope text-tally-blue"></i>
                   <a href="mailto:sekar@hcshah.co" class="font-bold text-gray-800 hover:underline">
                     sekar@hcshah.co
@@ -1773,9 +1795,9 @@
       </div>
       <h5 class="font-black text-gray-900 mb-2">Phone</h5>
       <p class="text-sm text-gray-600 leading-relaxed">
-        <strong>+968 9243 4429</strong><br>
-        (212) 24705101 / (212) 24707654<br>
-        (212) 24786151 / (212) 24786651
+        <strong>+968 9243 4429  /  +968 9944 6958</strong><br>
+        24705101 / 24707654 Ext. 212<br>
+        24786151 / 24786651 Ext. 212
       </p>
     </div>
   
@@ -1955,8 +1977,8 @@
             </div>
             <h5 class="font-black mb-2">Phone</h5>
             <p class="text-sm text-gray-600">
-              +968 9243 4429<br>
-              24705101 / 24707654
+              +968 9243 4429  /  +968 9944 6958<br>
+              24705101 / 24707654 Ext. 212
             </p>
           </div>
   
@@ -2543,19 +2565,6 @@
         />
       </div>
     </div>
-
-  <!-- HERO: COMBINED TROPHIES -->
-  <div class="max-w-4xl mx-auto text-center">
-    <img
-      src="images/trophy-combined.webp"
-      alt="Tally Excellence Awards"
-      class="w-full rounded-2xl shadow-2xl border cursor-pointer hover:scale-105 transition-transform"
-      onclick="openImageLightbox(this.src)"
-    />
-    <p class="text-sm text-gray-500 mt-4 italic">
-      Recognized by Tally Solutions for Excellence in Performance & Customer Retention
-    </p>
-  </div>
 
   </div>
   </div>

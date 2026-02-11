@@ -51,6 +51,62 @@
           animation: subtle-pulse 4s infinite ease-in-out;
          border: 1px solid #ebeae5; /* Optional: adds a thin border to make it pop */
         }
+        .company-title {
+            line-height: 1;
+            word-break: normal;
+            overflow-wrap: anywhere;
+    
+            font-size: clamp(2.2rem, 5.8vw, 5.5rem);
+        }
+
+        @media (min-width: 1024px) {
+            .company-title {
+                white-space: nowrap;    
+                font-size: clamp(2.5rem, 4.2vw, 5.5rem);
+           }
+        }
+        .partner-wrapper {
+            opacity: 0;
+            transform: translateY(50px) scale(0.85);
+            filter: blur(8px);
+        }
+        
+        .partner-wrapper.animate-in {
+            animation: partnerZoomIn 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        @keyframes partnerZoomIn {
+
+            0% {
+                opacity: 0;
+                transform: translateY(70px) scale(0.8);
+                filter: blur(10px);
+            }
+
+            45% {
+                opacity: 1;
+                transform: translateY(-10px) scale(1.04);
+                filter: blur(0px);
+            }
+
+            70% {
+                transform: translateY(6px) scale(0.995);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0px) scale(1);
+                filter: blur(0px);
+            }
+        }
+        .partner-logo {
+             transition: transform 0.5s ease;
+         }
+
+         .partner-wrapper:hover .partner-logo {
+             transform: scale(1.12);
+         }
+
     </style>
 </head>
 <body class="bg-slate-50">
@@ -190,12 +246,11 @@
   <section id="home" class="relative bg-ubts-gold overflow-hidden pt-8 pb-10 px-6 md:px-16 min-h-fit lg:h-[calc(100vh-120px)] flex flex-col justify-center">
   
     <div class="w-full text-center mb-6 md:mb-10">
-      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-tally-blue tracking-tighter leading-none uppercase drop-shadow-sm">
-        United Business Trading & Services LLC
+      <h1 class="company-title font-black text-tally-blue tracking-tighter uppercase drop-shadow-sm">
+      United Business Trading & Services LLC
       </h1>
-      <div class="h-1.5 w-32 bg-tally-blue mx-auto mt-4 rounded-full opacity-80"></div>
-    </div>
-  
+      <div class="h-1.5 w-32 bg-tally-blue mx-auto mt-4"></div>
+      </div>
     <div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center gap-8">
       
       <div class="md:w-3/5 text-center md:text-left">
@@ -220,18 +275,38 @@
       </div>
       
       <div class="md:w-2/5 flex justify-center">
-        <div class="relative bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl border-b-8 border-tally-blue transform hover:rotate-2 transition-transform max-w-[280px] md:max-w-full">
-            <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16 md:h-20 mx-auto mb-4">
-            <div class="text-center">
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Official Distributor</p>
-                <p class="text-2xl md:text-3xl font-black text-tally-blue">25+ YEARS</p>
-                <p class="text-[10px] font-bold text-gray-600">SULTANATE OF OMAN</p>
+
+        <div id="partnerCardWrapper" class="partner-wrapper">
+    
+            <div class="relative bg-white/90 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl border-b-8 border-tally-blue transition-transform duration-500 hover:rotate-2 hover:scale-[1.03] max-w-[280px] md:max-w-full">
+    
+                <img src="images/Gold_Partner_oman.webp" alt="Gold Partner" class="h-16 md:h-20 mx-auto mb-4 partner-logo">
+    
+                <div class="text-center">
+                    <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Official Distributor</p>
+                    <p class="text-2xl md:text-3xl font-black text-tally-blue">25+ YEARS</p>
+                    <p class="text-[10px] font-bold text-gray-600">SULTANATE OF OMAN</p>
+                </div>
+    
             </div>
         </div>
-      </div>
+    
+    </div>    
   
     </div>
   </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+    
+        const wrapper = document.getElementById("partnerCardWrapper");
+    
+        // small cinematic delay
+        setTimeout(() => {
+            wrapper.classList.add("animate-in");
+        }, 350);
+    
+    });
+    </script>    
 
     <section id="about" class="py-24 px-6 md:px-16 bg-white">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center">

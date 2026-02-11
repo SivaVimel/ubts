@@ -21,6 +21,8 @@
         
         body { font-family: 'Inter', sans-serif; }
         .nav-link:hover { color: var(--tally-blue); border-bottom: 2px solid var(--tally-blue); }
+        .modal-nav-link:hover { color: var(--ubts-gold); }
+        .modal-nav-link.active { color: var(--ubts-gold); border-bottom: 2px solid var(--ubts-gold); }
         @keyframes slideUp {
           from { transform: translateY(100%); }
           to { transform: translateY(0); }
@@ -113,8 +115,7 @@
 
     <div class="bg-tally-blue text-white py-2 px-6 md:px-16 text-xs hidden md:flex justify-between items-center">
         <div class="flex gap-6">
-            <span><i class="fas fa-envelope mr-2"></i>biztoolsoman@hcshah.co</span>
-            <span><i class="fas fa-envelope mr-2"></i>biztools@omantel.net.om</span>
+          <span><i class="fas fa-envelope mr-2"></i>biztools@omantel.net.om</span>
             <span><i class="fas fa-phone mr-2"></i>+968 92434429            </span>
             <span onclick="window.location.href='https://www.linkedin.com/in/united-business-trading-and-services-llc-ubts-b669b5285/'"><i class="fab fa-linkedin mr-2"></i>LinkedIn</span>
             <span onclick="window.location.href='https://www.facebook.com/profile.php?id=100080280957273'"><i class="fab fa-facebook-f mr-2"></i>Facebook</span>
@@ -225,7 +226,92 @@
     </div>
   </div>
 
-  <script>
+  <!-- MODAL NAV TEMPLATE (Hidden, injected into modals) -->
+  <div id="modal-nav-template" class="hidden">
+    <nav class="bg-white sticky top-0 z-50 shadow-md px-6 md:px-16 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <img src="images/logo.png" alt="UBTS" class="h-10 md:h-12 cursor-pointer" onclick="closeCurrentModal()">
+      </div>
+
+      <ul class="hidden lg:flex gap-8 font-bold text-gray-700 uppercase text-sm">
+        <li>
+          <button onclick="switchToModal('aboutModal')" class="modal-nav-link transition-all pb-1 uppercase" data-modal="aboutModal">
+            About
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('productsModal')" class="modal-nav-link transition-all pb-1 uppercase" data-modal="productsModal">
+            Products
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('achievementsModal')" class="modal-nav-link transition-all pb-1 uppercase" data-modal="achievementsModal">
+            Achievements
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('expertModal')" class="modal-nav-link transition-all pb-1 uppercase" data-modal="expertModal">
+            Ask Expert
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('contactModal')" class="modal-nav-link transition-all pb-1 uppercase" data-modal="contactModal">
+            Contact
+          </button>
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-4">
+        <img src="images/tallyprime-badge.webp" 
+        class="h-12 md:h-16 border-l-2 border-gray-200 pl-4 hidden md:block" 
+        alt="TallyPrime Badge">
+        <button onclick="document.getElementById('ubts-ai-toggle').click(); closeCurrentModal();" class="bg-tally-green text-white px-4 py-2 rounded text-xs font-black shadow-lg hover:scale-105 transition-transform">Ask UBTS AI</button>
+      </div>
+      <button class="lg:hidden text-tally-blue text-2xl font-black" aria-label="Open menu" onclick="openModalMobileMenu()">
+        ☰
+      </button>
+    </nav>
+  </div>
+
+  <!-- MOBILE NAV MENU (Inside Modals) -->
+  <div id="modalMobileMenu" class="fixed inset-0 z-[9999] hidden">
+    <div class="absolute inset-0 bg-black/60" onclick="closeModalMobileMenu()"></div>
+    <div class="absolute top-0 right-0 w-4/5 max-w-sm h-full bg-white shadow-2xl p-6 animate-slideUp">
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-black text-tally-blue text-lg">Menu</span>
+        <button onclick="closeModalMobileMenu()" class="text-3xl font-black">&times;</button>
+      </div>
+      <ul class="space-y-6 text-gray-800 font-bold uppercase text-sm">
+        <li>
+          <button onclick="switchToModal('aboutModal'); closeModalMobileMenu()" class="w-full text-left py-2 border-b">
+            About
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('productsModal'); closeModalMobileMenu()" class="w-full text-left py-2 border-b">
+            Products
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('achievementsModal'); closeModalMobileMenu()" class="w-full text-left py-2 border-b">
+            Achievements
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('expertModal'); closeModalMobileMenu()" class="w-full text-left py-2 border-b">
+            Ask Expert
+          </button>
+        </li>
+        <li>
+          <button onclick="switchToModal('contactModal'); closeModalMobileMenu()" class="w-full text-left py-2 border-b">
+            Contact
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   
@@ -240,6 +326,69 @@
     }
   
     mobileMenuBtn.onclick = openMobileMenu;
+
+    // Modal Mobile Menu Functions
+    const modalMobileMenu = document.getElementById('modalMobileMenu');
+
+    function openModalMobileMenu() {
+      modalMobileMenu.classList.remove('hidden');
+    }
+
+    function closeModalMobileMenu() {
+      modalMobileMenu.classList.add('hidden');
+    }
+
+    // Modal Switching System
+    let currentModal = null;
+
+    function switchToModal(targetModalId) {
+      if (currentModal) {
+        document.getElementById(currentModal).classList.add('hidden');
+      }
+      
+      const targetModal = document.getElementById(targetModalId);
+      if (targetModal) {
+        targetModal.classList.remove('hidden');
+        targetModal.scrollTop = 0;
+        currentModal = targetModalId;
+        document.body.style.overflow = 'hidden';
+        updateModalNavActive(targetModalId);
+      }
+    }
+
+    function updateModalNavActive(activeModalId) {
+      document.querySelectorAll('.modal-nav-link').forEach(link => {
+        if (link.getAttribute('data-modal') === activeModalId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    function closeCurrentModal() {
+      if (currentModal) {
+        document.getElementById(currentModal).classList.add('hidden');
+        document.body.style.overflow = '';
+        currentModal = null;
+      }
+    }
+
+    // Inject modal nav into each modal on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const navTemplate = document.getElementById('modal-nav-template').innerHTML;
+      const modals = ['aboutModal', 'productsModal', 'achievementsModal', 'expertModal', 'contactModal'];
+      
+      modals.forEach(modalId => {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          const modalContent = modal.querySelector('.relative');
+          if (modalContent) {
+            modalContent.insertAdjacentHTML('afterbegin', navTemplate);
+          }
+        }
+      });
+    });
   </script>
   
 
@@ -899,7 +1048,7 @@
   
     </div>
     </section>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('mainContactForm').addEventListener('submit', function (e) {
           e.preventDefault();
       
@@ -1239,13 +1388,11 @@
   </div>
   <script>
     function openAboutModal() {
-      document.getElementById('aboutModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      switchToModal('aboutModal');
     }
     
     function closeAboutModal() {
-      document.getElementById('aboutModal').classList.add('hidden');
-      document.body.style.overflow = '';
+      closeCurrentModal();
     }
   </script>  
   <script>
@@ -1289,7 +1436,7 @@
   
     <div class="relative h-full w-full bg-white overflow-y-auto animate-slideUp">
       
-      <div class="sticky top-0 bg-tally-blue border-b z-50 px-6 md:px-16 py-4 flex justify-between items-center">
+      <div class="sticky top-0 bg-tally-blue border-b z-10 px-6 md:px-16 py-4 flex justify-between items-center">
         <div class="flex items-center gap-4">
           <h2 class="text-xl md:text-2xl font-black text-white uppercase">Product Portfolio</h2>
         </div>
@@ -1745,11 +1892,11 @@
   
   <script>
     function openProductsModal() {
-      openPopup('productsModal');
+      switchToModal('productsModal');
     }
 
     function closeProductsModal() {
-      history.back();
+      closeCurrentModal();
     }
   </script>
     
@@ -1867,8 +2014,8 @@
                 </div>
                 <div class="flex items-center gap-3">
                   <i class="fas fa-envelope text-tally-blue"></i>
-                  <a href="mailto:sekar@hcshah.co" class="font-bold text-gray-800 hover:underline">
-                    sekar@hcshah.co
+                  <a href="/cdn-cgi/l/email-protection#1162747a7063517972627970793f727e" class="font-bold text-gray-800 hover:underline">
+                    <span class="__cf_email__" data-cfemail="dba8beb0baa99bb3b8a8b3bab3f5b8b4">[email&#160;protected]</span>
                   </a>
                 </div>
               </div>
@@ -1983,15 +2130,13 @@
       </div>
     </div>
   </div>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function openExpertModal() {
-      document.getElementById('expertModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      switchToModal('expertModal');
     }
   
     function closeExpertModal() {
-      document.getElementById('expertModal').classList.add('hidden');
-      document.body.style.overflow = '';
+      closeCurrentModal();
     }
   </script>
   <script>
@@ -2165,15 +2310,13 @@
       </div>
     </div>
   </div>
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function openContactModal() {
-      document.getElementById('contactModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
+      switchToModal('contactModal');
     }
   
     function closeContactModal() {
-      document.getElementById('contactModal').classList.add('hidden');
-      document.body.style.overflow = '';
+      closeCurrentModal();
     }
   </script>
   <script>
@@ -2658,6 +2801,16 @@
   });
 </script>
 
+<script>
+  function openAchievementsModal() {
+    switchToModal('achievementsModal');
+  }
+
+  function closeAchievementsModal() {
+    closeCurrentModal();
+  }
+</script>
+
 <!-- ACHIEVEMENTS MODAL -->
 <div id="achievementsModal" class="fixed inset-0 z-[999] hidden">
 
@@ -2744,11 +2897,6 @@
         />
       </div>
     </div>
-
-  </div>
-  </div>
-</div>
-
 <script>
   function openAchievementsModal() {
     document.getElementById('achievementsModal').classList.remove('hidden');
@@ -2760,6 +2908,10 @@
     document.body.style.overflow = '';
   }
 </script>
+   </div>
+  </div>
+ </div>
+</div>
 
 </body>
 </html>

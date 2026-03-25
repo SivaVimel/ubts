@@ -7,6 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>emailjs.init("2fG3nGycYrtyY7hOQ");</script>
+    <script>
+      function showFormStatus(elementId, type, msg) {
+        var el = document.getElementById(elementId);
+        el.textContent = msg;
+        el.className = 'mt-3 px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all';
+        if (type === 'success') {
+          el.className += ' bg-green-100 text-green-800 border border-green-300';
+        } else if (type === 'error') {
+          el.className += ' bg-red-100 text-red-800 border border-red-300';
+        } else {
+          el.className += ' bg-yellow-100 text-yellow-800 border border-yellow-300';
+        }
+        el.classList.remove('hidden');
+        if (type === 'success') {
+          setTimeout(function () { el.classList.add('hidden'); }, 6000);
+        }
+      }
+    </script>
     <style>
         :root {
             --tally-blue: #00529B;
@@ -119,7 +139,7 @@
 
     <div class="bg-tally-blue text-white py-2 px-6 md:px-16 text-xs hidden md:flex justify-between items-center">
         <div class="flex gap-6">
-          <span><i class="fas fa-envelope mr-2"></i>biztools@omantel.net.om</span>
+          <span><i class="fas fa-envelope mr-2"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e3c37242a3131322d1e31333f302a3b3270303b2a703133">[email&#160;protected]</a></span>
             <span><i class="fas fa-phone mr-2"></i>+968 92434429            </span>
             <span onclick="window.location.href='https://www.linkedin.com/in/united-business-trading-and-services-llc-ubts-b669b5285/'"><i class="fab fa-linkedin mr-2"></i>LinkedIn</span>
             <span onclick="window.location.href='https://www.facebook.com/profile.php?id=100080280957273'"><i class="fab fa-facebook-f mr-2"></i>Facebook</span>
@@ -325,7 +345,7 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   
@@ -1003,11 +1023,11 @@
           <div class="flex gap-4 items-start">
             <i class="fas fa-envelope text-ubts-gold mt-1 text-xl"></i>
             <p class="font-bold">
-              <a href="mailto:biztoolsoman@hcshah.co" class="hover:underline">
-                biztoolsoman@hcshah.co
+              <a href="/cdn-cgi/l/email-protection#65070c1f110a0a09160a08040b250d06160d040d4b060a" class="hover:underline">
+                <span class="__cf_email__" data-cfemail="12707b68667d7d7e617d7f737c527a71617a737a3c717d">[email&#160;protected]</span>
               </a><br>
-              <a href="mailto:biztools@omantel.net.om" class="hover:underline">
-                biztools@omantel.net.om
+              <a href="/cdn-cgi/l/email-protection#47252e3d3328282b3407282a262933222b6929223369282a" class="hover:underline">
+                <span class="__cf_email__" data-cfemail="3a5853404e555556497a55575b544e5f5614545f4e145557">[email&#160;protected]</span>
               </a>
             </p>
           </div>
@@ -1079,13 +1099,14 @@
             class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest">
             Send Inquiry
           </button>
+          <div id="mainFormStatus" class="hidden mt-3 px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all"></div>
   
         </form>
       </div>
   
     </div>
     </section>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('mainContactForm').addEventListener('submit', function (e) {
           e.preventDefault();
       
@@ -1096,31 +1117,37 @@
           const message = document.getElementById('mainMessage').value.trim();
       
           if (!name || !email || !phone || !message) {
-            alert('Please fill in all required fields.');
+            showFormStatus('mainFormStatus', 'warning', 'Please fill in all required fields.');
             return;
           }
-      
-          const subject = `Website Contact – ${name}`;
-      
-          const body =
-      `Name: ${name}
-      Company: ${company}
-      Email: ${email}
-      Phone: ${phone}
-      
-      Message:
-      ${message}
-      
-      ---
-      Submitted via Website Contact Section
-      UBTS`;
-      
-          const mailtoLink =
-            `mailto:biztoolsoman@hcshah.co` +
-            `?subject=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`;
-      
-          window.location.href = mailtoLink;
+
+          const btn = this.querySelector('button[type="submit"]');
+          const originalText = btn.textContent;
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+
+          emailjs.send('service_ukp2hnv', 'template_fx3xnif', {
+            from_name: name,
+            name: name,
+            from_email: email,
+            email: email,
+            phone: phone,
+            company: company,
+            subject: '',
+            message: message,
+            form_source: 'Website Contact Section',
+            time: new Date().toLocaleString()
+          }).then(function () {
+            showFormStatus('mainFormStatus', 'success', '✓ Message sent successfully! We will get back to you soon.');
+            document.getElementById('mainContactForm').reset();
+            btn.textContent = originalText;
+            btn.disabled = false;
+          }, function (error) {
+            showFormStatus('mainFormStatus', 'error', '✕ Failed to send message. Please try again later.');
+            console.error('EmailJS Error:', error);
+            btn.textContent = originalText;
+            btn.disabled = false;
+          });
         });
       </script>
       
@@ -2094,6 +2121,7 @@
                 class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest">
                 Submit Query
               </button>
+              <div id="expertFormStatus" class="hidden mt-3 px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all"></div>
   
             </form>
           </div>
@@ -2134,9 +2162,9 @@
       </div>
       <h5 class="font-black text-gray-900 mb-2">Email</h5>
       <p class="text-sm text-gray-600 leading-relaxed">
-        <a href="mailto:sekar@hcshah.co" class="hover:underline block">sekar@hcshah.co</a>
-        <a href="mailto:biztoolsoman@hcshah.co" class="hover:underline block">biztoolsoman@hcshah.co</a>
-        <a href="mailto:biztools@omantel.net.om" class="hover:underline block">biztools@omantel.net.om</a>
+        <a href="/cdn-cgi/l/email-protection#d3a0b6b8b2a193bbb0a0bbb2bbfdb0bc" class="hover:underline block"><span class="__cf_email__" data-cfemail="285b4d43495a68404b5b404940064b47">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#e5878c9f918a8a89968a88848ba58d86968d848dcb868a" class="hover:underline block"><span class="__cf_email__" data-cfemail="3e5c57444a5151524d51535f507e565d4d565f56105d51">[email&#160;protected]</span></a>
+        <a href="/cdn-cgi/l/email-protection#cfada6b5bba0a0a3bc8fa0a2aea1bbaaa3e1a1aabbe1a0a2" class="hover:underline block"><span class="__cf_email__" data-cfemail="1173786b657e7e7d62517e7c707f65747d3f7f74653f7e7c">[email&#160;protected]</span></a>
       </p>
     </div>
   
@@ -2157,7 +2185,7 @@
       </div>
     </div>
   </div>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function openExpertModal() {
       switchToModal('expertModal');
     }
@@ -2176,30 +2204,34 @@
       const query = document.getElementById('expertQuery').value.trim();
   
       if (!name || !email || !phone || !query) {
-        alert('Please fill in all required fields.');
+        showFormStatus('expertFormStatus', 'warning', 'Please fill in all required fields.');
         return;
       }
-  
-      const subject = `Tally Support Query – ${name}`;
-  
-      const body =
-  `Name: ${name}
-  Email: ${email}
-  Contact Number: ${phone}
-  
-  Tally Query:
-  ${query}
-  
-  ---
-  Submitted via Ask a Tally Expert
-  UBTS Website`;
-  
-      const mailtoLink =
-        `mailto:sekar@hcshah.co` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
-  
-      window.location.href = mailtoLink;
+
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      emailjs.send('service_ukp2hnv', 'template_j8arq2c', {
+        from_name: name,
+        name: name,
+        from_email: email,
+        email: email,
+        phone: phone,
+        message: query,
+        time: new Date().toLocaleString()
+      }).then(function () {
+        showFormStatus('expertFormStatus', 'success', '✓ Query submitted successfully! Our Tally expert will get back to you soon.');
+        document.getElementById('expertForm').reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, function (error) {
+        showFormStatus('expertFormStatus', 'error', '✕ Failed to submit query. Please try again later.');
+        console.error('EmailJS Error:', error);
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
     });
   </script>  
   
@@ -2272,6 +2304,7 @@
                 class="bg-tally-green text-white font-black py-4 rounded-lg shadow-lg hover:bg-opacity-90 transition-all uppercase tracking-widest w-fit px-12">
                 Submit Now
               </button>
+              <div id="contactFormStatus" class="hidden mt-3 px-4 py-3 rounded-lg text-sm font-semibold text-center transition-all"></div>
   
             </form>
           </div>
@@ -2311,9 +2344,9 @@
             </div>
             <h5 class="font-black mb-2">Email</h5>
             <p class="text-sm text-gray-600">
-              sekar@hcshah.co<br>
-              biztoolsoman@hcshah.co<br>
-              biztools@omantel.net.om
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8bf8eee0eaf9cbe3e8f8e3eae3a5e8e4">[email&#160;protected]</a><br>
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7e1c17040a1111120d11131f103e161d0d161f16501d11">[email&#160;protected]</a><br>
+              <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="781a11020c1717140b38171519160c1d1456161d0c561715">[email&#160;protected]</a>
             </p>
           </div>
   
@@ -2333,7 +2366,7 @@
       </div>
     </div>
   </div>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function openContactModal() {
       switchToModal('contactModal');
     }
@@ -2353,32 +2386,38 @@
       const message = document.getElementById('contactMessage').value.trim();
   
       if (!name || !email || !phone || !message) {
-        alert('Please fill in all required fields.');
+        showFormStatus('contactFormStatus', 'warning', 'Please fill in all required fields.');
         return;
       }
-  
-      const subject = subjectInput
-        ? `Contact Form – ${subjectInput}`
-        : `Contact Request – ${name}`;
-  
-      const body =
-  `Name: ${name}
-  Email: ${email}
-  Phone: ${phone}
-  
-  Message:
-  ${message}
-  
-  ---
-  Submitted via Contact Form
-  UBTS Website`;
-  
-      const mailtoLink =
-        `mailto:biztoolsoman@hcshah.co` +
-        `?subject=${encodeURIComponent(subject)}` +
-        `&body=${encodeURIComponent(body)}`;
-  
-      window.location.href = mailtoLink;
+
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      emailjs.send('service_ukp2hnv', 'template_fx3xnif', {
+        from_name: name,
+        name: name,
+        from_email: email,
+        email: email,
+        phone: phone,
+        company: '',
+        subject: subjectInput,
+        message: message,
+        form_source: 'Contact Modal',
+        time: new Date().toLocaleString()
+      }).then(function () {
+        showFormStatus('contactFormStatus', 'success', '✓ Message sent successfully! We will get back to you soon.');
+        document.getElementById('contactForm').reset();
+        btn.textContent = originalText;
+        btn.disabled = false;
+        setTimeout(function () { closeContactModal(); }, 3000);
+      }, function (error) {
+        showFormStatus('contactFormStatus', 'error', '✕ Failed to send message. Please try again later.');
+        console.error('EmailJS Error:', error);
+        btn.textContent = originalText;
+        btn.disabled = false;
+      });
     });
   </script>  
     <!--AI ASSISTANT-->
